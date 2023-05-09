@@ -104,9 +104,8 @@
             Mensagem.ForeColor = Color.Yellow;
             Mensagem.Location = new Point(301, 47);
             Mensagem.Name = "Mensagem";
-            Mensagem.Size = new Size(127, 30);
+            Mensagem.Size = new Size(0, 30);
             Mensagem.TabIndex = 5;
-            Mensagem.Text = "Mensagem";
             // 
             // Form1
             // 

@@ -1,3 +1,5 @@
+using System.Diagnostics.Eventing.Reader;
+
 namespace PrjtAula01
 {
     public partial class Form1 : Form
@@ -11,14 +13,32 @@ namespace PrjtAula01
         {
             //código quando o botão ENTRAR for clicado
 
-            if (CaixaLogin.Text == "12345678900" && CaixaSenha.Text == "123456")
+            string mensagem;
+
+            if (CaixaLogin.Text == String.Empty || CaixaSenha.Text == String.Empty)
             {
-                Mensagem.Text = "Usuário Verificado";
+                mensagem = "Dados não informados";
             }
+            else if (CaixaLogin.TextLength < 11 || CaixaSenha.TextLength < 6)
+            {
+                mensagem = "Preencha os dados corretamente";
+            }
+
             else
             {
-                Mensagem.Text = "Usuário Inexistente";
+                if (CaixaLogin.Text == "12345678900" && CaixaSenha.Text == "123456")
+                {
+                    mensagem = "Usuário Verificado";
+                }
+                else
+                {
+                    mensagem = "Usuário Inexistente";
+                }
+
             }
+            // Mensagem.Text = mensagem; // mensagem em um label
+
+            MessageBox.Show(mensagem, "Aviso!");
         }
     }
 }
