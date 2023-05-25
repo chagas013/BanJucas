@@ -89,6 +89,7 @@
             depositar.TabIndex = 3;
             depositar.Text = "Depositar";
             depositar.UseVisualStyleBackColor = false;
+            depositar.Click += depositar_Click;
             // 
             // sacar
             // 
@@ -100,6 +101,7 @@
             sacar.TabIndex = 4;
             sacar.Text = "Sacar";
             sacar.UseVisualStyleBackColor = false;
+            sacar.Click += sacar_Click;
             // 
             // agdPagto
             // 
@@ -133,6 +135,7 @@
             sairMenu.TabIndex = 7;
             sairMenu.Text = "Sair";
             sairMenu.UseVisualStyleBackColor = false;
+            sairMenu.Click += sairMenu_Click;
             // 
             // lblOla
             // 

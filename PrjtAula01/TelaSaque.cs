@@ -16,5 +16,10 @@ namespace PrjtAula01
         {
             InitializeComponent();
         }
+
+        private void lblVoltarSaque_Click(object sender, EventArgs e)
+        {
+           this.Close();
+        }
     }
 }

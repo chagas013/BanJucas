@@ -15,19 +15,20 @@ namespace PrjtAula01
         public TelaLogin()
         {
             InitializeComponent();
+
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             // instanciei a classe / criei o objeto
-            TelaLoginPrincipal TelaLogin = new TelaLoginPrincipal();
+            TelaLoginPrincipal TelaLoginPrin = new TelaLoginPrincipal();
 
             //usando metodo show
-            TelaLogin.Show();
+            TelaLoginPrin.Show();
 
             //definindo a janela "pai" para o form TelaLogin, ou seja, obrigando a tela criada a ser aberta dentro do Form principal
-            TelaLogin.MdiParent = this;
+            TelaLoginPrin.MdiParent = this;
 
         }
 
@@ -38,14 +39,17 @@ namespace PrjtAula01
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var telaLogin = new TelaLoginPrincipal();
+
             // instanciei a classe / criei o objeto
-            TelaCadastro TelaLogin = new TelaCadastro();
+            TelaCadastro TelaCad = new TelaCadastro();
 
             //usando metodo show
-            TelaLogin.Show();
+            TelaCad.Show(); 
+            
 
             //definindo a janela "pai" para o form TelaLogin, ou seja, obrigando a tela criada a ser aberta dentro do Form principal
-            TelaLogin.MdiParent = this;
+            TelaCad.MdiParent = this;
 
         }
     }

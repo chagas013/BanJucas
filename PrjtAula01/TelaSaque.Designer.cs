@@ -66,6 +66,7 @@
             lblVoltarSaque.TabIndex = 36;
             lblVoltarSaque.Text = "Voltar";
             lblVoltarSaque.UseVisualStyleBackColor = false;
+            lblVoltarSaque.Click += lblVoltarSaque_Click;
             // 
             // btConfirmarSaque
             // 

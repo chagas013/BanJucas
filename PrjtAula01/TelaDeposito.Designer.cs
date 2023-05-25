@@ -175,6 +175,7 @@
             lblVoltarDeposito.TabIndex = 23;
             lblVoltarDeposito.Text = "Voltar";
             lblVoltarDeposito.UseVisualStyleBackColor = false;
+            lblVoltarDeposito.Click += lblVoltarDeposito_Click;
             // 
             // lblDepositoConfirmado
             // 

@@ -11,7 +11,14 @@ namespace PrjtAula01
 
         private void BotaoEntrar_Click(object sender, EventArgs e)
         {
+            var telaLogin = new TelaLoginPrincipal();
 
+            // instanciei a classe / criei o objeto
+            MenuPrincipal TelaMenu = new MenuPrincipal();
+
+            //usando metodo show
+            TelaMenu.Show();
+                       
 
             //código quando o botão ENTRAR for clicado
 
@@ -38,9 +45,8 @@ namespace PrjtAula01
                 }
 
             }
-            // Mensagem.Text = mensagem; // mensagem em um label
-
-            MessageBox.Show(mensagem, "Aviso!");
+            
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -50,7 +56,12 @@ namespace PrjtAula01
 
         private void criarCadastro_Click(object sender, EventArgs e)
         {
+            // instanciei a classe / criei o objeto
+            TelaCadastro TelaLogin = new TelaCadastro();
 
+            //usando metodo show
+            TelaLogin.Show();
+          
         }
     }
 }
