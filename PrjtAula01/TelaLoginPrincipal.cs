@@ -11,42 +11,33 @@ namespace PrjtAula01
 
         private void BotaoEntrar_Click(object sender, EventArgs e)
         {
-            var telaLogin = new TelaLoginPrincipal();
-
-            // instanciei a classe / criei o objeto
-            MenuPrincipal TelaMenu = new MenuPrincipal();
-
-            //usando metodo show
-            TelaMenu.Show();
-                       
 
             //código quando o botão ENTRAR for clicado
 
-            string mensagem;
-
-            if (caixaLogin.Text == String.Empty || senhaLogin.Text == String.Empty)
+            while (caixaLogin.Text == String.Empty || senhaLogin.Text == String.Empty)
             {
-                mensagem = "Dados não informados";
+                lblMsgLogin.Text = "Dados não informados!";
+                caixaLogin.Focus();
+                break;
             }
+
+            if (caixaLogin.Text == "12345678900" && senhaLogin.Text == "123456")
+            {
+                var telaLogin = new TelaLoginPrincipal();
+
+                // instanciei a classe / criei o objeto
+                MenuPrincipal TelaMenu = new MenuPrincipal();
+
+                //usando metodo show
+                TelaMenu.Show();
+            }
+
             else if (caixaLogin.TextLength < 11 || senhaLogin.TextLength < 6)
             {
-                mensagem = "Preencha os dados corretamente";
+                lblMsgLogin.Text = "Preencha os dados corretamente";
+                
             }
 
-            else
-            {
-                if (caixaLogin.Text == "12345678900" && senhaLogin.Text == "123456")
-                {
-                    mensagem = "Usuário Verificado";
-                }
-                else
-                {
-                    mensagem = "Usuário Inexistente";
-                }
-
-            }
-            
-            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -61,7 +52,22 @@ namespace PrjtAula01
 
             //usando metodo show
             TelaLogin.Show();
-          
+
+        }
+
+        private void caixaLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TelaLoginPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

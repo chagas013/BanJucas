@@ -29,165 +29,158 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastro));
-            nome = new TextBox();
-            cpf = new TextBox();
-            rg = new TextBox();
-            celular = new TextBox();
-            email = new TextBox();
-            dataNascimento = new TextBox();
-            renda = new TextBox();
-            logradouro = new TextBox();
-            genero = new TextBox();
-            confirmarSenha = new TextBox();
-            criarSenha = new TextBox();
-            pictureBox1 = new PictureBox();
-            criarAcesso = new Button();
-            voltarLoginCadastro = new Button();
+            txtNomeCad = new TextBox();
+            txtCpfCad = new TextBox();
+            txtRgCad = new TextBox();
+            txtCelCad = new TextBox();
+            txtEmailCad = new TextBox();
+            txtDataNascCad = new TextBox();
+            txtRendaCad = new TextBox();
+            txtLogradCad = new TextBox();
+            txtGeneroCad = new TextBox();
+            txtConfSenhaCad = new TextBox();
+            txtSenhaCad = new TextBox();
+            btAcessoCad = new Button();
+            btVoltarCad = new Button();
             lblinserirCadastro = new Label();
+            pictureBox1 = new PictureBox();
+            txtValDepCad = new TextBox();
+            lblDepInicial = new Label();
+            lblValorMin = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // nome
+            // txtNomeCad
             // 
-            nome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nome.Location = new Point(133, 107);
-            nome.Name = "nome";
-            nome.PlaceholderText = "Nome Completo";
-            nome.Size = new Size(300, 29);
-            nome.TabIndex = 0;
-            nome.TextAlign = HorizontalAlignment.Center;
+            txtNomeCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNomeCad.Location = new Point(133, 107);
+            txtNomeCad.Name = "txtNomeCad";
+            txtNomeCad.PlaceholderText = "Nome Completo";
+            txtNomeCad.Size = new Size(300, 29);
+            txtNomeCad.TabIndex = 0;
+            txtNomeCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // cpf
+            // txtCpfCad
             // 
-            cpf.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cpf.Location = new Point(133, 159);
-            cpf.Name = "cpf";
-            cpf.PlaceholderText = "000.000.000-00";
-            cpf.Size = new Size(300, 29);
-            cpf.TabIndex = 1;
-            cpf.TextAlign = HorizontalAlignment.Center;
+            txtCpfCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCpfCad.Location = new Point(133, 159);
+            txtCpfCad.Name = "txtCpfCad";
+            txtCpfCad.PlaceholderText = "000.000.000-00";
+            txtCpfCad.Size = new Size(300, 29);
+            txtCpfCad.TabIndex = 1;
+            txtCpfCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // rg
+            // txtRgCad
             // 
-            rg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            rg.Location = new Point(133, 212);
-            rg.Name = "rg";
-            rg.PlaceholderText = "00.000.000-0";
-            rg.Size = new Size(300, 29);
-            rg.TabIndex = 2;
-            rg.TextAlign = HorizontalAlignment.Center;
+            txtRgCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRgCad.Location = new Point(133, 212);
+            txtRgCad.Name = "txtRgCad";
+            txtRgCad.PlaceholderText = "00.000.000-0";
+            txtRgCad.Size = new Size(300, 29);
+            txtRgCad.TabIndex = 2;
+            txtRgCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // celular
+            // txtCelCad
             // 
-            celular.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            celular.Location = new Point(133, 265);
-            celular.Name = "celular";
-            celular.PlaceholderText = "Celular";
-            celular.Size = new Size(300, 29);
-            celular.TabIndex = 3;
-            celular.TextAlign = HorizontalAlignment.Center;
+            txtCelCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCelCad.Location = new Point(133, 265);
+            txtCelCad.Name = "txtCelCad";
+            txtCelCad.PlaceholderText = "Celular";
+            txtCelCad.Size = new Size(300, 29);
+            txtCelCad.TabIndex = 3;
+            txtCelCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // email
+            // txtEmailCad
             // 
-            email.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            email.Location = new Point(133, 316);
-            email.Name = "email";
-            email.PlaceholderText = "email@email.com";
-            email.Size = new Size(300, 29);
-            email.TabIndex = 4;
-            email.TextAlign = HorizontalAlignment.Center;
+            txtEmailCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmailCad.Location = new Point(133, 316);
+            txtEmailCad.Name = "txtEmailCad";
+            txtEmailCad.PlaceholderText = "email@email.com";
+            txtEmailCad.Size = new Size(300, 29);
+            txtEmailCad.TabIndex = 4;
+            txtEmailCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // dataNascimento
+            // txtDataNascCad
             // 
-            dataNascimento.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataNascimento.Location = new Point(133, 367);
-            dataNascimento.Name = "dataNascimento";
-            dataNascimento.PlaceholderText = "Data de Nascimento";
-            dataNascimento.Size = new Size(300, 29);
-            dataNascimento.TabIndex = 5;
-            dataNascimento.TextAlign = HorizontalAlignment.Center;
+            txtDataNascCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDataNascCad.Location = new Point(133, 367);
+            txtDataNascCad.Name = "txtDataNascCad";
+            txtDataNascCad.PlaceholderText = "Data de Nascimento";
+            txtDataNascCad.Size = new Size(300, 29);
+            txtDataNascCad.TabIndex = 5;
+            txtDataNascCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // renda
+            // txtRendaCad
             // 
-            renda.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            renda.Location = new Point(133, 520);
-            renda.Name = "renda";
-            renda.PlaceholderText = "Renda Mensal";
-            renda.Size = new Size(300, 29);
-            renda.TabIndex = 8;
-            renda.TextAlign = HorizontalAlignment.Center;
+            txtRendaCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRendaCad.Location = new Point(133, 520);
+            txtRendaCad.Name = "txtRendaCad";
+            txtRendaCad.PlaceholderText = "Renda Mensal";
+            txtRendaCad.Size = new Size(300, 29);
+            txtRendaCad.TabIndex = 8;
+            txtRendaCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // logradouro
+            // txtLogradCad
             // 
-            logradouro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            logradouro.Location = new Point(133, 469);
-            logradouro.Name = "logradouro";
-            logradouro.PlaceholderText = "Endereço Completo";
-            logradouro.Size = new Size(300, 29);
-            logradouro.TabIndex = 7;
-            logradouro.TextAlign = HorizontalAlignment.Center;
+            txtLogradCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLogradCad.Location = new Point(133, 469);
+            txtLogradCad.Name = "txtLogradCad";
+            txtLogradCad.PlaceholderText = "Endereço Completo";
+            txtLogradCad.Size = new Size(300, 29);
+            txtLogradCad.TabIndex = 7;
+            txtLogradCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // genero
+            // txtGeneroCad
             // 
-            genero.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            genero.Location = new Point(133, 418);
-            genero.Name = "genero";
-            genero.PlaceholderText = "Gênero";
-            genero.Size = new Size(300, 29);
-            genero.TabIndex = 6;
-            genero.TextAlign = HorizontalAlignment.Center;
+            txtGeneroCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtGeneroCad.Location = new Point(133, 418);
+            txtGeneroCad.Name = "txtGeneroCad";
+            txtGeneroCad.PlaceholderText = "Gênero";
+            txtGeneroCad.Size = new Size(300, 29);
+            txtGeneroCad.TabIndex = 6;
+            txtGeneroCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // confirmarSenha
+            // txtConfSenhaCad
             // 
-            confirmarSenha.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            confirmarSenha.Location = new Point(794, 158);
-            confirmarSenha.Name = "confirmarSenha";
-            confirmarSenha.PlaceholderText = "Confirme sua senha";
-            confirmarSenha.Size = new Size(300, 29);
-            confirmarSenha.TabIndex = 10;
-            confirmarSenha.TextAlign = HorizontalAlignment.Center;
+            txtConfSenhaCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtConfSenhaCad.Location = new Point(794, 158);
+            txtConfSenhaCad.Name = "txtConfSenhaCad";
+            txtConfSenhaCad.PlaceholderText = "Confirme sua senha";
+            txtConfSenhaCad.Size = new Size(300, 29);
+            txtConfSenhaCad.TabIndex = 10;
+            txtConfSenhaCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // criarSenha
+            // txtSenhaCad
             // 
-            criarSenha.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            criarSenha.Location = new Point(794, 107);
-            criarSenha.Name = "criarSenha";
-            criarSenha.PlaceholderText = "Crie sua senha";
-            criarSenha.Size = new Size(300, 29);
-            criarSenha.TabIndex = 9;
-            criarSenha.TextAlign = HorizontalAlignment.Center;
+            txtSenhaCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSenhaCad.Location = new Point(794, 107);
+            txtSenhaCad.Name = "txtSenhaCad";
+            txtSenhaCad.PlaceholderText = "Crie sua senha";
+            txtSenhaCad.Size = new Size(300, 29);
+            txtSenhaCad.TabIndex = 9;
+            txtSenhaCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // pictureBox1
+            // btAcessoCad
             // 
-            pictureBox1.BackColor = Color.FromArgb(82, 143, 235);
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(687, 212);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(327, 178);
-            pictureBox1.TabIndex = 14;
-            pictureBox1.TabStop = false;
+            btAcessoCad.BackColor = Color.White;
+            btAcessoCad.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btAcessoCad.Location = new Point(855, 418);
+            btAcessoCad.Name = "btAcessoCad";
+            btAcessoCad.Size = new Size(203, 54);
+            btAcessoCad.TabIndex = 12;
+            btAcessoCad.Text = "Criar Acesso";
+            btAcessoCad.UseVisualStyleBackColor = false;
             // 
-            // criarAcesso
+            // btVoltarCad
             // 
-            criarAcesso.BackColor = Color.White;
-            criarAcesso.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            criarAcesso.Location = new Point(855, 418);
-            criarAcesso.Name = "criarAcesso";
-            criarAcesso.Size = new Size(203, 54);
-            criarAcesso.TabIndex = 11;
-            criarAcesso.Text = "Criar Acesso";
-            criarAcesso.UseVisualStyleBackColor = false;
-            // 
-            // voltarLoginCadastro
-            // 
-            voltarLoginCadastro.BackColor = Color.White;
-            voltarLoginCadastro.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            voltarLoginCadastro.Location = new Point(855, 495);
-            voltarLoginCadastro.Name = "voltarLoginCadastro";
-            voltarLoginCadastro.Size = new Size(203, 54);
-            voltarLoginCadastro.TabIndex = 12;
-            voltarLoginCadastro.Text = "Voltar";
-            voltarLoginCadastro.UseVisualStyleBackColor = false;
+            btVoltarCad.BackColor = Color.White;
+            btVoltarCad.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btVoltarCad.Location = new Point(855, 495);
+            btVoltarCad.Name = "btVoltarCad";
+            btVoltarCad.Size = new Size(203, 54);
+            btVoltarCad.TabIndex = 13;
+            btVoltarCad.Text = "Voltar";
+            btVoltarCad.UseVisualStyleBackColor = false;
             // 
             // lblinserirCadastro
             // 
@@ -201,27 +194,72 @@
             lblinserirCadastro.Text = "Insira seus dados";
             lblinserirCadastro.Click += lblCriarCadastro_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(547, 255);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(131, 124);
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
+            // 
+            // txtValDepCad
+            // 
+            txtValDepCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtValDepCad.Location = new Point(794, 328);
+            txtValDepCad.Name = "txtValDepCad";
+            txtValDepCad.PlaceholderText = "R$ 0,00";
+            txtValDepCad.Size = new Size(300, 29);
+            txtValDepCad.TabIndex = 11;
+            txtValDepCad.TextAlign = HorizontalAlignment.Center;
+            // 
+            // lblDepInicial
+            // 
+            lblDepInicial.AutoSize = true;
+            lblDepInicial.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDepInicial.ForeColor = Color.White;
+            lblDepInicial.Location = new Point(794, 249);
+            lblDepInicial.Name = "lblDepInicial";
+            lblDepInicial.Size = new Size(295, 28);
+            lblDepInicial.TabIndex = 17;
+            lblDepInicial.Text = "Insira o valor do seu 1º depósito";
+            lblDepInicial.Click += label1_Click;
+            // 
+            // lblValorMin
+            // 
+            lblValorMin.AutoSize = true;
+            lblValorMin.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            lblValorMin.ForeColor = Color.White;
+            lblValorMin.Location = new Point(865, 277);
+            lblValorMin.Name = "lblValorMin";
+            lblValorMin.Size = new Size(161, 28);
+            lblValorMin.TabIndex = 18;
+            lblValorMin.Text = "(mínimo R$ 1,00)";
+            // 
             // TelaCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(82, 143, 235);
             ClientSize = new Size(1218, 636);
-            Controls.Add(lblinserirCadastro);
-            Controls.Add(voltarLoginCadastro);
-            Controls.Add(criarAcesso);
+            Controls.Add(lblValorMin);
+            Controls.Add(lblDepInicial);
+            Controls.Add(txtValDepCad);
             Controls.Add(pictureBox1);
-            Controls.Add(confirmarSenha);
-            Controls.Add(criarSenha);
-            Controls.Add(renda);
-            Controls.Add(logradouro);
-            Controls.Add(genero);
-            Controls.Add(dataNascimento);
-            Controls.Add(email);
-            Controls.Add(celular);
-            Controls.Add(rg);
-            Controls.Add(cpf);
-            Controls.Add(nome);
+            Controls.Add(lblinserirCadastro);
+            Controls.Add(btVoltarCad);
+            Controls.Add(btAcessoCad);
+            Controls.Add(txtConfSenhaCad);
+            Controls.Add(txtSenhaCad);
+            Controls.Add(txtRendaCad);
+            Controls.Add(txtLogradCad);
+            Controls.Add(txtGeneroCad);
+            Controls.Add(txtDataNascCad);
+            Controls.Add(txtEmailCad);
+            Controls.Add(txtCelCad);
+            Controls.Add(txtRgCad);
+            Controls.Add(txtCpfCad);
+            Controls.Add(txtNomeCad);
             Name = "TelaCadastro";
             Text = "Tela Cadastro";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -231,20 +269,23 @@
 
         #endregion
 
-        private TextBox nome;
-        private TextBox cpf;
-        private TextBox rg;
-        private TextBox celular;
-        private TextBox email;
-        private TextBox dataNascimento;
-        private TextBox renda;
-        private TextBox logradouro;
-        private TextBox genero;
-        private TextBox confirmarSenha;
-        private TextBox criarSenha;
-        private PictureBox pictureBox1;
-        private Button criarAcesso;
-        private Button voltarLoginCadastro;
+        private TextBox txtNomeCad;
+        private TextBox txtCpfCad;
+        private TextBox txtRgCad;
+        private TextBox txtCelCad;
+        private TextBox txtEmailCad;
+        private TextBox txtDataNascCad;
+        private TextBox txtRendaCad;
+        private TextBox txtLogradCad;
+        private TextBox txtGeneroCad;
+        private TextBox txtConfSenhaCad;
+        private TextBox txtSenhaCad;
+        private Button btAcessoCad;
+        private Button btVoltarCad;
         private Label lblinserirCadastro;
+        private PictureBox pictureBox1;
+        private TextBox txtValDepCad;
+        private Label lblDepInicial;
+        private Label lblValorMin;
     }
 }

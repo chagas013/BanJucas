@@ -38,6 +38,7 @@
             pictureBox1 = new PictureBox();
             criarCadastro = new Button();
             esquecerSenha = new Button();
+            lblMsgLogin = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             caixaLogin.Size = new Size(195, 36);
             caixaLogin.TabIndex = 0;
             caixaLogin.TextAlign = HorizontalAlignment.Center;
+            caixaLogin.TextChanged += caixaLogin_TextChanged;
             // 
             // senhaLogin
             // 
@@ -151,12 +153,23 @@
             esquecerSenha.Text = "Esqueci minha senha";
             esquecerSenha.UseVisualStyleBackColor = false;
             // 
+            // lblMsgLogin
+            // 
+            lblMsgLogin.AutoSize = true;
+            lblMsgLogin.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMsgLogin.Location = new Point(846, 92);
+            lblMsgLogin.Name = "lblMsgLogin";
+            lblMsgLogin.Size = new Size(0, 37);
+            lblMsgLogin.TabIndex = 9;
+            lblMsgLogin.Click += label1_Click;
+            // 
             // TelaLoginPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(82, 143, 235);
             ClientSize = new Size(1218, 633);
+            Controls.Add(lblMsgLogin);
             Controls.Add(esquecerSenha);
             Controls.Add(criarCadastro);
             Controls.Add(pictureBox1);
@@ -169,6 +182,7 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             Name = "TelaLoginPrincipal";
             Text = "BanJucas";
+            Load += TelaLoginPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -185,5 +199,6 @@
         private PictureBox pictureBox1;
         private Button criarCadastro;
         private Button esquecerSenha;
+        private Label lblMsgLogin;
     }
 }
