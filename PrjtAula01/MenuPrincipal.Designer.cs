@@ -113,6 +113,7 @@
             agdPagto.TabIndex = 5;
             agdPagto.Text = "Agendar Pagamento";
             agdPagto.UseVisualStyleBackColor = false;
+            agdPagto.Click += agdPagto_Click;
             // 
             // pagarTransferir
             // 

@@ -12,7 +12,7 @@ namespace PrjtAula01
 {
     public partial class MenuPrincipal : Form
     {
-            
+
         public MenuPrincipal()
         {
 
@@ -32,8 +32,8 @@ namespace PrjtAula01
             MenuPrincipal TelaPrin = new MenuPrincipal();
 
             //usando metodo show
-            TelaDep.Show(this);            
-            
+            TelaDep.Show(this);
+
 
         }
 
@@ -51,9 +51,14 @@ namespace PrjtAula01
         {
 
         }
-        public void voltarPag() 
+        public void voltarPag()
         {
             this.Close();
+        }
+
+        private void agdPagto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
