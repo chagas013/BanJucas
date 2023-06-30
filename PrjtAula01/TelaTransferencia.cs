@@ -10,16 +10,15 @@ using System.Windows.Forms;
 
 namespace PrjtAula01
 {
-    public partial class TelaDeposito : Form
+    public partial class TelaTransferencia : Form
     {
-        public TelaDeposito()
+        public TelaTransferencia()
         {
             InitializeComponent();
         }
 
-        private void lblVoltarDeposito_Click(object sender, EventArgs e)
+        private void lblValorDeposito_Click(object sender, EventArgs e)
         {
-
 
         }
     }

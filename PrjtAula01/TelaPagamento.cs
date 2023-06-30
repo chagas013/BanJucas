@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace PrjtAula01
 {
-    public partial class TelaDeposito : Form
+    public partial class TelaPagamento : Form
     {
-        public TelaDeposito()
+        public TelaPagamento()
         {
             InitializeComponent();
-        }
-
-        private void lblVoltarDeposito_Click(object sender, EventArgs e)
-        {
-
-
         }
     }
 }

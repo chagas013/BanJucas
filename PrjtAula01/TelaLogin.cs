@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PrjtAula01.Classes;
 
 namespace PrjtAula01
 {
@@ -62,7 +63,9 @@ namespace PrjtAula01
 
         private void transferênciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TelaTransferencia janelaTransferencia = new TelaTransferencia();
+            janelaTransferencia.MdiParent = this;
+            janelaTransferencia.Show();
         }
 
         private void logarToolStripMenuItem_Click(object sender, EventArgs e)

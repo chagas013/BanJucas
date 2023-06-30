@@ -1,4 +1,5 @@
 using System.Diagnostics.Eventing.Reader;
+using PrjtAula01.Classes;
 
 namespace PrjtAula01
 {
@@ -14,16 +15,16 @@ namespace PrjtAula01
 
             //código quando o botão ENTRAR for clicado
 
-            while (caixaLogin.Text == String.Empty || senhaLogin.Text == String.Empty)
+            if (caixaLogin.Text == String.Empty || senhaLogin.Text == String.Empty)
             {
                 lblMsgLogin.Text = "Dados não informados!";
                 caixaLogin.Focus();
-                break;
+                
             }
 
-            if (caixaLogin.Text == "12345678900" && senhaLogin.Text == "123456")
+            else if (caixaLogin.Text == "12345678900" && senhaLogin.Text == "123456")
             {
-                var telaLogin = new TelaLoginPrincipal();
+                TelaLoginPrincipal telaLogin = new TelaLoginPrincipal();
 
                 // instanciei a classe / criei o objeto
                 MenuPrincipal TelaMenu = new MenuPrincipal();
@@ -37,6 +38,12 @@ namespace PrjtAula01
                 lblMsgLogin.Text = "Preencha os dados corretamente";
                 
             }
+
+            Conta MinhaConta = new Conta();
+
+            MinhaConta.Status = "ATIVA";
+
+            MessageBox.Show(MinhaConta.Status);
 
         }
 
