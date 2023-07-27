@@ -11,11 +11,12 @@ namespace PrjtAula01.Classes
 
         public int IdConta { get; set; }
         public int IdCliente { get; set; }
-        public double Saldo { get; set; }
-        public string Status { get; set; }
+        public double Saldo { get; set; } = 0;
+        public string? Status { get; set; }
         public double Limite { get; set; }
         public DateTime DataAbertura { get; set; }
-        public DateTime DataEncerramento { get; set; }
+        public DateTime? DataEncerramento { get; set; }
+        public string? TipoConta { get; set; }
 
 
 
@@ -24,14 +25,27 @@ namespace PrjtAula01.Classes
         
         }
 
-        public Conta(int idConta, int idCliente, double Saldo, string Status, double Limite, DateTime DataAbertura)
+        public Conta(int idConta, int idCliente, double saldo, string status, double limite, 
+                      DateTime dataAbertura, DateTime? dataEncerramento, string? tipoConta)
         {
             this.IdConta = idConta;
             this.IdCliente = idCliente;
-            this.Saldo = Saldo;
-            this.Status = Status;
-            this.Limite = Limite;
-            this.DataAbertura = DataAbertura;
+            this.Saldo = saldo;
+            this.Status = status;
+            this.Limite = limite;
+            this.DataAbertura = dataAbertura;
+            this.DataEncerramento = dataEncerramento;
+            this.TipoConta = tipoConta;
+
+        }
+
+        //Criando método de depósito
+
+        public double Depositar(double valorDeposito)
+        {
+
+            this.Saldo = this.Saldo + valorDeposito;
+            return this.Saldo;
 
         }
     }

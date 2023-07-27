@@ -209,6 +209,7 @@
             Controls.Add(lblDeposito);
             Name = "TelaDeposito";
             Text = "TelaDeposito";
+            Load += Extra_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -22,5 +22,10 @@ namespace PrjtAula01
 
 
         }
+
+        private void Extra_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

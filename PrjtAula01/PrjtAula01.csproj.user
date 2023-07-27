@@ -25,5 +25,8 @@
     <Compile Update="TelaTransferencia.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Teste.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
