@@ -28,13 +28,29 @@ namespace PrjtAula01
 
             //MessageBox.Show(minhaConta.Saldo.ToString() + " " + minhaConta.Status, "Minha Conta");
 
-            minhaConta = new Conta (2, 0, 1000, "Ativa", 0, DateTime.Now, null, "Corrente" );
+            minhaConta = new Conta(2, 0, 1000, "Ativa", 0, DateTime.Now, null, "Corrente");
         }
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
-            minhaConta.Depositar(Convert.ToDouble(txtVlrDpst.Text));
-            lblTotalSaldo.Text = "Saldo: " + minhaConta.Saldo;
+            //Método informal - Concatenando (Separando o método por bloco)
+            //lblTotalSaldo.Text = "Saldo: R$ " + minhaConta.Depositar(Convert.ToDouble(txtVlrDpst.Text)).ToString("n2");
+
+            //Método formal - Template String sempre começar com $ (Técnica de programação que une texto com variáveis)
+            lblTotalSaldo.Text = $"Saldo: R$ {minhaConta.Depositar(Convert.ToDouble(txtVlrDpst.Text)).ToString("n2")}.";
+
+            Conta contaA = new Conta();
+            contaA.Depositar(500);
+            Conta contaB = new Conta();
+            contaB.Depositar(1500);
+
+            MessageBox.Show(Conta.RetornarSaldoTodasContas(), "Valor Total de depósitos");
+
+        }
+
+        private void btnSaque_Click(object sender, EventArgs e)
+        {
+            lblSaldo.Text = $"Saldo: R$ {minhaConta.Sacar(Convert.ToDouble(txtVlrDpst.Text)).ToString("n2")}.";
         }
     }
 }

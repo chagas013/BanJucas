@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,25 +18,35 @@ namespace PrjtAula01.Classes
         public DateTime DataAbertura { get; set; }
         public DateTime? DataEncerramento { get; set; }
         public string? TipoConta { get; set; }
+        public static int TotalContas { get; set; }
+        public static double TotalSaldo { get; set; }
+        public double Saque { get; set; }
 
 
 
 
-        public Conta() { 
-        
+        public Conta()
+        {
+            TotalContas = TotalContas + 1;
+            TotalSaldo = TotalSaldo + Saldo;
+            Saque = TotalSaldo - Saque;
+
+
         }
 
-        public Conta(int idConta, int idCliente, double saldo, string status, double limite, 
+        public Conta(int idConta, int idCliente, double saldo, string status, double limite,
                       DateTime dataAbertura, DateTime? dataEncerramento, string? tipoConta)
         {
-            this.IdConta = idConta;
-            this.IdCliente = idCliente;
-            this.Saldo = saldo;
-            this.Status = status;
-            this.Limite = limite;
-            this.DataAbertura = dataAbertura;
-            this.DataEncerramento = dataEncerramento;
-            this.TipoConta = tipoConta;
+            IdConta = idConta;
+            IdCliente = idCliente;
+            Saldo = saldo;
+            Status = status;
+            Limite = limite;
+            DataAbertura = dataAbertura;
+            DataEncerramento = dataEncerramento;
+            TipoConta = tipoConta;
+            TotalContas = TotalContas + 1;
+            TotalSaldo = TotalSaldo + Saldo;
 
         }
 
@@ -45,8 +56,32 @@ namespace PrjtAula01.Classes
         {
 
             this.Saldo = this.Saldo + valorDeposito;
+            TotalSaldo += valorDeposito;
             return this.Saldo;
 
         }
+
+        public static string RetornarSaldoTodasContas()
+        {
+            return $"O Saldo de todas as contas é de R$ {TotalSaldo}";
+        }
+
+        public double Sacar(double valorSaque)
+        {
+            if (valorSaque <= 0)
+            {
+                MessageBox.Show("Coloque um valor real de saque!");
+            }
+
+            else
+            {
+                Saldo -= valorSaque;
+            }
+
+            return Saldo;
+
+        }
+
+
     }
 }
