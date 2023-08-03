@@ -33,24 +33,74 @@ namespace PrjtAula01
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
+
             //Método informal - Concatenando (Separando o método por bloco)
             //lblTotalSaldo.Text = "Saldo: R$ " + minhaConta.Depositar(Convert.ToDouble(txtVlrDpst.Text)).ToString("n2");
 
             //Método formal - Template String sempre começar com $ (Técnica de programação que une texto com variáveis)
-            lblTotalSaldo.Text = $"Saldo: R$ {minhaConta.Depositar(Convert.ToDouble(txtVlrDpst.Text)).ToString("n2")}.";
 
-            Conta contaA = new Conta();
-            contaA.Depositar(500);
-            Conta contaB = new Conta();
-            contaB.Depositar(1500);
+            try
+            {
 
-            MessageBox.Show(Conta.RetornarSaldoTodasContas(), "Valor Total de depósitos");
+                if (txtVlrDpst.Text == String.Empty)
+                {
+                    throw new Exception("Digite um valor para depositar.");
+                }
+
+                lblTotalSaldo.Text = $"Saldo: R$ {minhaConta.Depositar(Convert.ToDouble(txtVlrDpst.Text)).ToString("n2")}.";
+
+                //MessageBox.Show(Conta.RetornarSaldoTodasContas(), "Valor Total de depósitos");
+                txtVlrDpst.Clear();
+                txtVlrDpst.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void btnSaque_Click(object sender, EventArgs e)
         {
-            lblSaldo.Text = $"Saldo: R$ {minhaConta.Sacar(Convert.ToDouble(txtVlrDpst.Text)).ToString("n2")}.";
+            try
+            {
+                if (txtVlrDpst.Text == String.Empty)
+                {
+                    throw new Exception("Digite um valor para sacar.");
+                }
+
+                lblTotalSaldo.Text = $"Saldo: R$ {minhaConta.Sacar(Convert.ToDouble(txtVlrDpst.Text)).ToString("n2")}.";
+                txtVlrDpst.Clear();
+                txtVlrDpst.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally //Bloco que SEMPRE será executado (Ex: Erro de conexão, comunicação, fecha automaticamente o programa ou arquivo
+            {
+                txtVlrDpst.Focus();
+            }
+
+        }
+
+        private void btnVerSaldo_Click(object sender, EventArgs e)
+        {
+            lblTotalSaldo.Text = $"Saldo: R$ {minhaConta.Saldo.ToString("n2")}";
+            lblTotalSaldo.Show();
+        }
+
+        private void txtVlrDpst_TextChanged(object sender, EventArgs e)
+        {
+            if (!double.TryParse(txtVlrDpst.Text, out var valorDigitado))
+            {
+                txtVlrDpst.Clear();
+            }
+        }
+
+        private void btnEsconderSaldo_Click(object sender, EventArgs e)
+        {
+            lblTotalSaldo.Hide();
         }
     }
 }

@@ -54,6 +54,12 @@ namespace PrjtAula01.Classes
 
         public double Depositar(double valorDeposito)
         {
+            if (valorDeposito <= 0) 
+            {
+
+                throw new Exception("Coloque um valor real de depósito!");
+
+            }
 
             this.Saldo = this.Saldo + valorDeposito;
             TotalSaldo += valorDeposito;
@@ -70,7 +76,12 @@ namespace PrjtAula01.Classes
         {
             if (valorSaque <= 0)
             {
-                MessageBox.Show("Coloque um valor real de saque!");
+                throw new Exception ("Coloque um valor real de saque!");
+            }
+
+            else if (valorSaque > Saldo)
+            {
+               throw new Exception ("Você não tem saldo suficiente para esse saque!");
             }
 
             else

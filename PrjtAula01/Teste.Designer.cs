@@ -31,8 +31,9 @@
             btnDepositar = new Button();
             txtVlrDpst = new TextBox();
             lblTotalSaldo = new Label();
-            lblSaldo = new Label();
             btnSaque = new Button();
+            btnVerSaldo = new Button();
+            btnEsconderSaldo = new Button();
             SuspendLayout();
             // 
             // btnDepositar
@@ -51,8 +52,10 @@
             txtVlrDpst.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             txtVlrDpst.Location = new Point(287, 102);
             txtVlrDpst.Name = "txtVlrDpst";
+            txtVlrDpst.PlaceholderText = "0,00";
             txtVlrDpst.Size = new Size(185, 43);
             txtVlrDpst.TabIndex = 1;
+            txtVlrDpst.TextChanged += txtVlrDpst_TextChanged;
             // 
             // lblTotalSaldo
             // 
@@ -62,16 +65,6 @@
             lblTotalSaldo.Name = "lblTotalSaldo";
             lblTotalSaldo.Size = new Size(0, 25);
             lblTotalSaldo.TabIndex = 2;
-            // 
-            // lblSaldo
-            // 
-            lblSaldo.AutoSize = true;
-            lblSaldo.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSaldo.Location = new Point(287, 284);
-            lblSaldo.Name = "lblSaldo";
-            lblSaldo.Size = new Size(67, 25);
-            lblSaldo.TabIndex = 4;
-            lblSaldo.Text = "Saldo:";
             // 
             // btnSaque
             // 
@@ -84,13 +77,36 @@
             btnSaque.UseVisualStyleBackColor = true;
             btnSaque.Click += btnSaque_Click;
             // 
+            // btnVerSaldo
+            // 
+            btnVerSaldo.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVerSaldo.Location = new Point(188, 24);
+            btnVerSaldo.Name = "btnVerSaldo";
+            btnVerSaldo.Size = new Size(152, 38);
+            btnVerSaldo.TabIndex = 6;
+            btnVerSaldo.Text = "Verificar Saldo";
+            btnVerSaldo.UseVisualStyleBackColor = true;
+            btnVerSaldo.Click += btnVerSaldo_Click;
+            // 
+            // btnEsconderSaldo
+            // 
+            btnEsconderSaldo.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEsconderSaldo.Location = new Point(417, 24);
+            btnEsconderSaldo.Name = "btnEsconderSaldo";
+            btnEsconderSaldo.Size = new Size(161, 38);
+            btnEsconderSaldo.TabIndex = 7;
+            btnEsconderSaldo.Text = "Esconder Saldo";
+            btnEsconderSaldo.UseVisualStyleBackColor = true;
+            btnEsconderSaldo.Click += btnEsconderSaldo_Click;
+            // 
             // Teste
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnEsconderSaldo);
+            Controls.Add(btnVerSaldo);
             Controls.Add(btnSaque);
-            Controls.Add(lblSaldo);
             Controls.Add(lblTotalSaldo);
             Controls.Add(txtVlrDpst);
             Controls.Add(btnDepositar);
@@ -107,7 +123,8 @@
         private Button btnDepositar;
         private TextBox txtVlrDpst;
         private Label lblTotalSaldo;
-        private Label lblSaldo;
         private Button btnSaque;
+        private Button btnVerSaldo;
+        private Button btnEsconderSaldo;
     }
 }
