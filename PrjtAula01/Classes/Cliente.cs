@@ -8,8 +8,9 @@ namespace PrjtAula01.Classes
 {
     public class Cliente
     {
+      
         private int _id;
-        public int Id
+        public int IdCliente
         {
             get
             {
@@ -25,7 +26,16 @@ namespace PrjtAula01.Classes
             }
 
         }
-        public string Nome { get; set; }
+         public string NomeCliente { get; set; }
+
+        public Cliente(int idCliente, string nomeCliente) 
+        {
+            IdCliente = idCliente;
+            NomeCliente = nomeCliente;        
+        
+        }
+            
+
 
     }
 }

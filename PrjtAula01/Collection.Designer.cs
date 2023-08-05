@@ -60,6 +60,7 @@
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Adicionar";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnListar
             // 
@@ -70,6 +71,7 @@
             btnListar.TabIndex = 3;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListar_Click;
             // 
             // listListar
             // 
