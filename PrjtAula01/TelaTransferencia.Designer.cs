@@ -84,7 +84,7 @@
             txtValorTransf.Name = "txtValorTransf";
             txtValorTransf.PlaceholderText = "0,00";
             txtValorTransf.Size = new Size(312, 35);
-            txtValorTransf.TabIndex = 2;
+            txtValorTransf.TabIndex = 1;
             txtValorTransf.TextAlign = HorizontalAlignment.Center;
             // 
             // txtDestinoTransf
@@ -95,7 +95,7 @@
             txtDestinoTransf.Name = "txtDestinoTransf";
             txtDestinoTransf.PlaceholderText = "000.000.000-00";
             txtDestinoTransf.Size = new Size(315, 35);
-            txtDestinoTransf.TabIndex = 1;
+            txtDestinoTransf.TabIndex = 0;
             txtDestinoTransf.TextAlign = HorizontalAlignment.Center;
             // 
             // lblTransfConfirmada
@@ -116,7 +116,7 @@
             lblVoltarTransf.Location = new Point(870, 506);
             lblVoltarTransf.Name = "lblVoltarTransf";
             lblVoltarTransf.Size = new Size(133, 42);
-            lblVoltarTransf.TabIndex = 4;
+            lblVoltarTransf.TabIndex = 3;
             lblVoltarTransf.Text = "Voltar";
             lblVoltarTransf.UseVisualStyleBackColor = false;
             // 
@@ -149,7 +149,7 @@
             btConfirmarTransf.Location = new Point(700, 323);
             btConfirmarTransf.Name = "btConfirmarTransf";
             btConfirmarTransf.Size = new Size(315, 48);
-            btConfirmarTransf.TabIndex = 3;
+            btConfirmarTransf.TabIndex = 2;
             btConfirmarTransf.Text = "Confirmar transferência";
             btConfirmarTransf.UseVisualStyleBackColor = false;
             // 

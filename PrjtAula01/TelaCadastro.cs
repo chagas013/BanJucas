@@ -26,5 +26,10 @@ namespace PrjtAula01
         {
 
         }
+
+        private void TelaCadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

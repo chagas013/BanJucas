@@ -86,7 +86,7 @@
             txtIdentificacao.Name = "txtIdentificacao";
             txtIdentificacao.PlaceholderText = "Quem está depositando?";
             txtIdentificacao.Size = new Size(300, 29);
-            txtIdentificacao.TabIndex = 4;
+            txtIdentificacao.TabIndex = 3;
             txtIdentificacao.TextAlign = HorizontalAlignment.Center;
             // 
             // txtNomeDestino
@@ -97,7 +97,7 @@
             txtNomeDestino.Name = "txtNomeDestino";
             txtNomeDestino.PlaceholderText = "Nome do beneficiário";
             txtNomeDestino.Size = new Size(300, 29);
-            txtNomeDestino.TabIndex = 3;
+            txtNomeDestino.TabIndex = 2;
             txtNomeDestino.TextAlign = HorizontalAlignment.Center;
             // 
             // txtNumConta
@@ -108,7 +108,7 @@
             txtNumConta.Name = "txtNumConta";
             txtNumConta.PlaceholderText = "Número da conta destino";
             txtNumConta.Size = new Size(300, 29);
-            txtNumConta.TabIndex = 2;
+            txtNumConta.TabIndex = 1;
             txtNumConta.TextAlign = HorizontalAlignment.Center;
             // 
             // txtAgencia
@@ -119,7 +119,7 @@
             txtAgencia.Name = "txtAgencia";
             txtAgencia.PlaceholderText = "Digite a agência de destino";
             txtAgencia.Size = new Size(300, 29);
-            txtAgencia.TabIndex = 1;
+            txtAgencia.TabIndex = 0;
             txtAgencia.TextAlign = HorizontalAlignment.Center;
             // 
             // pictureBox1
@@ -139,7 +139,7 @@
             txtValorDeposito.Name = "txtValorDeposito";
             txtValorDeposito.PlaceholderText = "R$ 0,00";
             txtValorDeposito.Size = new Size(300, 43);
-            txtValorDeposito.TabIndex = 5;
+            txtValorDeposito.TabIndex = 4;
             txtValorDeposito.TextAlign = HorizontalAlignment.Center;
             // 
             // lblValorDeposito
@@ -161,7 +161,7 @@
             btConfirmarDeposito.Location = new Point(837, 320);
             btConfirmarDeposito.Name = "btConfirmarDeposito";
             btConfirmarDeposito.Size = new Size(300, 48);
-            btConfirmarDeposito.TabIndex = 6;
+            btConfirmarDeposito.TabIndex = 5;
             btConfirmarDeposito.Text = "Confirmar depósito";
             btConfirmarDeposito.UseVisualStyleBackColor = false;
             // 
@@ -172,7 +172,7 @@
             lblVoltarDeposito.Location = new Point(1004, 514);
             lblVoltarDeposito.Name = "lblVoltarDeposito";
             lblVoltarDeposito.Size = new Size(133, 42);
-            lblVoltarDeposito.TabIndex = 7;
+            lblVoltarDeposito.TabIndex = 6;
             lblVoltarDeposito.Text = "Voltar";
             lblVoltarDeposito.UseVisualStyleBackColor = false;
             lblVoltarDeposito.Click += lblVoltarDeposito_Click;

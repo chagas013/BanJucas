@@ -19,7 +19,7 @@ namespace PrjtAula01
             {
                 lblMsgLogin.Text = "Dados não informados!";
                 caixaLogin.Focus();
-                
+
             }
 
             else if (caixaLogin.Text == "12345678900" && senhaLogin.Text == "123456")
@@ -36,7 +36,7 @@ namespace PrjtAula01
             else if (caixaLogin.TextLength < 11 || senhaLogin.TextLength < 6)
             {
                 lblMsgLogin.Text = "Preencha os dados corretamente";
-                
+
             }
 
             Conta MinhaConta = new Conta();
@@ -55,10 +55,11 @@ namespace PrjtAula01
         private void criarCadastro_Click(object sender, EventArgs e)
         {
             // instanciei a classe / criei o objeto
-            TelaCadastro TelaLogin = new TelaCadastro();
+            TelaCadastro telaCadastro = new TelaCadastro();
+            telaCadastro.MdiParent = this;
 
             //usando metodo show
-            TelaLogin.Show();
+            telaCadastro.Show();
 
         }
 

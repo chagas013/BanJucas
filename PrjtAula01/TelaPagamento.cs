@@ -16,5 +16,38 @@ namespace PrjtAula01
         {
             InitializeComponent();
         }
+
+        private void TelaPagamento_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSaldo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblPagamento_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblSaldoVal_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtCodBarras_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtNumConta_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtNomeDestino_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtIdentificacao_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
