@@ -1,5 +1,9 @@
+using System.Configuration;
+using System.Data;
+using System;
 using System.Diagnostics.Eventing.Reader;
 using PrjtAula01.Classes;
+using System.Data.SqlClient;
 
 namespace PrjtAula01
 {
@@ -13,37 +17,27 @@ namespace PrjtAula01
         private void BotaoEntrar_Click(object sender, EventArgs e)
         {
 
-            //código quando o botão ENTRAR for clicado
+            
+            //Criando uma conexão
 
-            if (caixaLogin.Text == String.Empty || senhaLogin.Text == String.Empty)
-            {
-                lblMsgLogin.Text = "Dados não informados!";
-                caixaLogin.Focus();
+            SqlConnection conexao =
+            new SqlConnection(ConfigurationManager.ConnectionStrings["PrjtAula01.Properties.Settings.strConexao"].ToString());
 
-            }
+            SqlDataReader leitor; //declarando uma variável do tipo leitor de dados
 
-            else if (caixaLogin.Text == "12345678900" && senhaLogin.Text == "123456")
-            {
-                TelaLoginPrincipal telaLogin = new TelaLoginPrincipal();
+            //Criando um comando
+            SqlCommand cmd = new SqlCommand();
 
-                // instanciei a classe / criei o objeto
-                MenuPrincipal TelaMenu = new MenuPrincipal();
+            //criando texto do comando, tipo e conexão que será usada
+            cmd.CommandText = "ps_validaLogin";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conexao;
 
-                //usando metodo show
-                TelaMenu.Show();
-            }
+            //passando parâmetros necessários
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("cpf", caixaLogin.Text);
+            cmd.Parameters.AddWithValue("senhaLogin", senhaLogin.Text);
 
-            else if (caixaLogin.TextLength < 11 || senhaLogin.TextLength < 6)
-            {
-                lblMsgLogin.Text = "Preencha os dados corretamente";
-
-            }
-
-            Conta MinhaConta = new Conta();
-
-            MinhaConta.Status = "ATIVA";
-
-            MessageBox.Show(MinhaConta.Status);
 
         }
 
