@@ -29,7 +29,7 @@ saldo numeric (10,2) not null,
 limite numeric (10,2) not null,
 dataAbertura datetime not null,
 dataEncerramento datetime,
-senhaConta char (6),
+senhaConta char (6) not null,
 constraint pk_conta primary key (idConta),
 constraint fk_clientes_conta foreign key (idCliente) references clientes (idCliente),
 );
@@ -69,6 +69,12 @@ constraint fk_conta_Origem_agendamento foreign key (idContaOrigem) references co
 constraint fk_conta_Destino_agendamento foreign key (idContaDestino) references conta (idConta),
 );
 
+drop table agendamento
+drop table movimentacoes
+drop table tipoOperacao
+drop table conta
+drop table clientes
+
 
 
 insert into clientes 
@@ -80,4 +86,19 @@ create procedure ps_validaLogin
 as
 select * from correntista
 where cpf = @cpf and senhaLogin = @senhaLogin
+
+select * from clientes
+select * from conta
+
+insert into conta
+values (1, 'ATIVA', 'Corrente', '15000.00', '3750.00', '08/10/2023', null, '123456');
+
+create procedure ps_buscaContasPorIdCliente
+@idCliente int
+as
+select * from conta
+where idCliente = @idCliente
+
+exec ps_buscaContasPorIdCliente 1
+
 

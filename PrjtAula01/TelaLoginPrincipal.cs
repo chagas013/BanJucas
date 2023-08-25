@@ -17,26 +17,97 @@ namespace PrjtAula01
         private void BotaoEntrar_Click(object sender, EventArgs e)
         {
 
-            
-            //Criando uma conexão
 
-            SqlConnection conexao =
-            new SqlConnection(ConfigurationManager.ConnectionStrings["PrjtAula01.Properties.Settings.strConexao"].ToString());
+            try
+            {
+                //Criando uma conexão
 
-            SqlDataReader leitor; //declarando uma variável do tipo leitor de dados
+                SqlConnection conexao =
+                new SqlConnection(ConfigurationManager.ConnectionStrings["PrjtAula01.Properties.Settings.strConexao"].ToString());
 
-            //Criando um comando
-            SqlCommand cmd = new SqlCommand();
+                SqlDataReader leitor; //declarando uma variável do tipo leitor de dados
 
-            //criando texto do comando, tipo e conexão que será usada
-            cmd.CommandText = "ps_validaLogin";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Connection = conexao;
+                //Criando um comando
+                SqlCommand cmd = new SqlCommand();
 
-            //passando parâmetros necessários
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("cpf", caixaLogin.Text);
-            cmd.Parameters.AddWithValue("senhaLogin", senhaLogin.Text);
+                //criando texto do comando, tipo e conexão que será usada
+                cmd.CommandText = "ps_validaLogin";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = conexao;
+
+                //passando parâmetros necessários
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("cpf", caixaLogin.Text);
+                cmd.Parameters.AddWithValue("senhaLogin", senhaLogin.Text);
+
+                conexao.Open(); //abrindo a conexão
+
+                leitor = cmd.ExecuteReader();
+                //igualando o leitor ao resultado trazido do BD (só é usado ExecuteReader quando há "select" no banco)
+
+                if (leitor.HasRows) //se o leitor encontrar linhas de dados
+                {
+                    leitor.Read();
+
+                    UsuarioLogado.IdCliente = leitor.GetInt32(0);
+                    UsuarioLogado.Nome = leitor.GetString(1);
+                    UsuarioLogado.Cpf = leitor.GetString(2);
+
+                    if (leitor.IsDBNull (3))
+                    {
+                        UsuarioLogado.Rg = leitor.GetString(3);
+                    }
+
+                    UsuarioLogado.DataNascimento = leitor.GetDateTime(4);
+
+                    if (leitor.IsDBNull(5))
+                    {
+                        UsuarioLogado.Telefone = leitor.GetString(5);
+                    }
+
+                    UsuarioLogado.Celular = leitor.GetString(6);
+
+                    if (leitor.IsDBNull(7))
+                    {
+                        UsuarioLogado.Email = leitor.GetString(7);
+                    }
+
+                    UsuarioLogado.Logradouro = leitor.GetString(8);
+                    UsuarioLogado.NumeroLogradouro = leitor.GetString(9);
+                    UsuarioLogado.Cep = leitor.GetString(10);
+                    UsuarioLogado.Cidade = leitor.GetString(11);
+                    UsuarioLogado.Estado = leitor.GetString(12);
+                    UsuarioLogado.Genero = leitor.GetString(13);
+                    UsuarioLogado.RendaMensal = leitor.GetDouble(14);
+                    UsuarioLogado.Senha = leitor.GetString(15);
+
+                    //fechando leitor
+                    leitor.Close();
+
+                    //criando texto do comando, tipo e conexão que será usada
+                    cmd.CommandText = "ps_buscaContasPorIdCliente";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = conexao;
+
+                    //passando os parâmetros necessários
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("idCliente", UsuarioLogado.IdCliente);
+
+                    //ler novamente o leitor
+                    leitor = cmd.ExecuteReader();
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha incorretos!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
 
 
         }

@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DTO
+{    
+        public class Conta
+        {
+            public int IdConta { get; set; }
+            public int IdCliente { get; set; }
+            public string StatusConta { get; set; }
+            public string TipoConta { get; set; }
+            public double Saldo { get; set; }
+            public double Limite { get; set; }
+            public DateTime DataAbertura { get; set; }
+            public DateTime DataEncerramento { get; set; }           
+            public string SenhaConta { get; set; }
+
+        }
+    
+}
