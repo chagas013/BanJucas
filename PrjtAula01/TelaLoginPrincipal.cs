@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics.Eventing.Reader;
 using PrjtAula01.Classes;
 using System.Data.SqlClient;
+using DTO;
 
 namespace PrjtAula01
 {
@@ -53,21 +54,21 @@ namespace PrjtAula01
                     UsuarioLogado.Nome = leitor.GetString(1);
                     UsuarioLogado.Cpf = leitor.GetString(2);
 
-                    if (leitor.IsDBNull (3))
+                    if (!leitor.IsDBNull (3))
                     {
                         UsuarioLogado.Rg = leitor.GetString(3);
                     }
 
                     UsuarioLogado.DataNascimento = leitor.GetDateTime(4);
 
-                    if (leitor.IsDBNull(5))
+                    if (!leitor.IsDBNull(5))
                     {
                         UsuarioLogado.Telefone = leitor.GetString(5);
                     }
 
                     UsuarioLogado.Celular = leitor.GetString(6);
 
-                    if (leitor.IsDBNull(7))
+                    if (!leitor.IsDBNull(7))
                     {
                         UsuarioLogado.Email = leitor.GetString(7);
                     }
@@ -78,7 +79,7 @@ namespace PrjtAula01
                     UsuarioLogado.Cidade = leitor.GetString(11);
                     UsuarioLogado.Estado = leitor.GetString(12);
                     UsuarioLogado.Genero = leitor.GetString(13);
-                    UsuarioLogado.RendaMensal = leitor.GetDouble(14);
+                    UsuarioLogado.RendaMensal = leitor.GetDecimal(14);
                     UsuarioLogado.Senha = leitor.GetString(15);
 
                     //fechando leitor
@@ -96,6 +97,59 @@ namespace PrjtAula01
                     //ler novamente o leitor
                     leitor = cmd.ExecuteReader();
 
+                    
+
+                    //verificar se há linhas retornadas do leitor
+                    if (leitor.HasRows)
+                    {
+                        //repete a leitura e enquanto há linhas segue na estrutura
+                        //de repetição
+                        while (leitor.Read())
+                        {
+                            //cria uma conta na memória
+                            Conta conta = new Conta();
+                            //passa os dados do leitor para a conta na memória - objeto conta
+                            conta.IdConta = leitor.GetInt32(0);
+                            conta.IdCliente = leitor.GetInt32(1);
+                            conta.StatusConta = leitor.GetString(2);
+                            conta.TipoConta = leitor.GetString(3);
+                            conta.Saldo = leitor.GetDecimal(4);
+                            conta.Limite = leitor.GetDecimal(5);
+                            conta.DataAbertura = leitor.GetDateTime(6);                           
+                            conta.SenhaConta = leitor.GetString(8);
+
+
+                            //adiciona a conta recém criada na memória para a colection de contas
+                            UsuarioLogado.Contas.Add(conta);
+                        }
+                    }
+                    leitor.Close(); //fecha leitor
+                    conexao.Close(); //fecha conexao com BD
+
+                    Form telaPrincipal = Application.OpenForms["TelaLogin"];
+                    //acessando o formulário aberto através da variável janelaPrincipal
+                    MenuStrip menuPrincipal = (MenuStrip)telaPrincipal.Controls[0];
+                    menuPrincipal.Items[0].Text = "Logout";
+                    menuPrincipal.Items[1].Visible = true;
+                    menuPrincipal.Items[2].Visible = true;
+                    menuPrincipal.Items[3].Visible = true;
+                    menuPrincipal.Items[4].Visible = true;                                       
+                    menuPrincipal.Items[5].Visible = true;                    
+
+
+
+                    MessageBox.Show($"Olá,{UsuarioLogado.Nome}!\n" +
+                        $"Você foi logado na conta {UsuarioLogado.Contas[0].IdCliente.ToString()}\n" +
+                        $"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
+                    //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
+                    //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
+                    //    $"{CorrentistaLogado.Estado},{CorrentistaLogado.Cpf},{CorrentistaLogado.Senha},{CorrentistaLogado.Celular}");
+                    this.Close();                   
+                    
+                    
+                    
+
+
                 }
                 else
                 {
@@ -106,7 +160,7 @@ namespace PrjtAula01
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
+
             }
 
 
@@ -121,7 +175,7 @@ namespace PrjtAula01
         {
             // instanciei a classe / criei o objeto
             TelaCadastro telaCadastro = new TelaCadastro();
-            telaCadastro.MdiParent = this;
+            
 
             //usando metodo show
             telaCadastro.Show();

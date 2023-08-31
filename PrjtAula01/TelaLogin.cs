@@ -70,15 +70,24 @@ namespace PrjtAula01
 
         private void logarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.menu.Items[0].Text == "Logar")
+            {
+                TelaLoginPrincipal telaLogin = new TelaLoginPrincipal();
+                telaLogin.MdiParent = this;
+                telaLogin.Show();
+            }
+            else
+            {
+                menu.Items[0].Text = "Logar";
+                menu.Items[1].Visible = false;
+                menu.Items[2].Visible = false;
+                menu.Items[3].Visible = false;
+                menu.Items[4].Visible = false;                
+                menu.Items[5].Visible = false;                               
+                UsuarioLogado.Deslogar();
+            }
 
-            // instanciei a classe / criei o objeto
-            TelaLoginPrincipal TelaLoginPrin = new TelaLoginPrincipal();
 
-            //definindo a janela "pai" para o form TelaLogin, ou seja, obrigando a tela criada a ser aberta dentro do Form principal
-            TelaLoginPrin.MdiParent = this;
-
-            //usando metodo show
-            TelaLoginPrin.Show();            
         }
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)

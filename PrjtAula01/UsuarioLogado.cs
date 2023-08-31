@@ -24,7 +24,7 @@ namespace PrjtAula01
         public static string? Cidade { get; set; }
         public static string? Estado { get; set; }
         public static string? Genero { get; set; }
-        public static double RendaMensal { get; set; }        
+        public static decimal RendaMensal { get; set; }        
         public static string? Senha { get; set; }
 
 

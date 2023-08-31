@@ -84,8 +84,11 @@ create procedure ps_validaLogin
 @cpf char(11),
 @senhaLogin char(6)
 as
-select * from correntista
+select * from clientes
 where cpf = @cpf and senhaLogin = @senhaLogin
+
+exec ps_validaLogin '37418657889', '130491'
+
 
 select * from clientes
 select * from conta
