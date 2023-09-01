@@ -21,7 +21,23 @@ namespace PrjtAula01
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (this.menu.Items[0].Text == "Logar")
+            {
+                TelaLoginPrincipal telaLogin = new TelaLoginPrincipal();
+                telaLogin.MdiParent = this;
+                telaLogin.Show();
+            }
+            else
+            {
+                menu.Items[0].Text = "Logar";
+                menu.Items[1].Visible = true;
+                menu.Items[2].Visible = false;
+                menu.Items[3].Visible = false;
+                menu.Items[4].Visible = false;
+                menu.Items[5].Visible = false;
+                menu.Items[6].Visible = false;
+                UsuarioLogado.Deslogar();
+            }
         }
 
         private void TelaLogin_Load(object sender, EventArgs e)
@@ -70,31 +86,20 @@ namespace PrjtAula01
 
         private void logarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.menu.Items[0].Text == "Logar")
-            {
-                TelaLoginPrincipal telaLogin = new TelaLoginPrincipal();
-                telaLogin.MdiParent = this;
-                telaLogin.Show();
-            }
-            else
-            {
-                menu.Items[0].Text = "Logar";
-                menu.Items[1].Visible = false;
-                menu.Items[2].Visible = false;
-                menu.Items[3].Visible = false;
-                menu.Items[4].Visible = false;                
-                menu.Items[5].Visible = false;                               
-                UsuarioLogado.Deslogar();
-            }
 
 
         }
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TelaCadastro janelaCadastro = new TelaCadastro();
-            janelaCadastro.MdiParent = this;
-            janelaCadastro.Show();
+
+        }
+
+        private void cadastrarContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaCadastro cadastrarConta = new TelaCadastro();
+            cadastrarConta.MdiParent = this;
+            cadastrarConta.Show();
         }
     }
 }

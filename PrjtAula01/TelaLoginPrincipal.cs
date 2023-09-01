@@ -54,7 +54,7 @@ namespace PrjtAula01
                     UsuarioLogado.Nome = leitor.GetString(1);
                     UsuarioLogado.Cpf = leitor.GetString(2);
 
-                    if (!leitor.IsDBNull (3))
+                    if (!leitor.IsDBNull(3))
                     {
                         UsuarioLogado.Rg = leitor.GetString(3);
                     }
@@ -97,7 +97,7 @@ namespace PrjtAula01
                     //ler novamente o leitor
                     leitor = cmd.ExecuteReader();
 
-                    
+
 
                     //verificar se há linhas retornadas do leitor
                     if (leitor.HasRows)
@@ -115,7 +115,7 @@ namespace PrjtAula01
                             conta.TipoConta = leitor.GetString(3);
                             conta.Saldo = leitor.GetDecimal(4);
                             conta.Limite = leitor.GetDecimal(5);
-                            conta.DataAbertura = leitor.GetDateTime(6);                           
+                            conta.DataAbertura = leitor.GetDateTime(6);
                             conta.SenhaConta = leitor.GetString(8);
 
 
@@ -133,8 +133,8 @@ namespace PrjtAula01
                     menuPrincipal.Items[1].Visible = true;
                     menuPrincipal.Items[2].Visible = true;
                     menuPrincipal.Items[3].Visible = true;
-                    menuPrincipal.Items[4].Visible = true;                                       
-                    menuPrincipal.Items[5].Visible = true;                    
+                    menuPrincipal.Items[4].Visible = true;
+                    menuPrincipal.Items[5].Visible = true;
 
 
 
@@ -144,10 +144,10 @@ namespace PrjtAula01
                     //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
                     //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
                     //    $"{CorrentistaLogado.Estado},{CorrentistaLogado.Cpf},{CorrentistaLogado.Senha},{CorrentistaLogado.Celular}");
-                    this.Close();                   
-                    
-                    
-                    
+                    this.Close();
+
+
+
 
 
                 }
@@ -173,12 +173,7 @@ namespace PrjtAula01
 
         private void criarCadastro_Click(object sender, EventArgs e)
         {
-            // instanciei a classe / criei o objeto
-            TelaCadastro telaCadastro = new TelaCadastro();
-            
 
-            //usando metodo show
-            telaCadastro.Show();
 
         }
 

@@ -4,7 +4,7 @@ create table clientes(
 idCliente int identity not null,
 nome varchar (50) not null,
 cpf char (11) not null unique,
-rg char (9) unique,
+rg char (9),
 dataNascimento date not null,
 telefone varchar (20),
 celular varchar (20) not null,
@@ -104,4 +104,28 @@ where idCliente = @idCliente
 
 exec ps_buscaContasPorIdCliente 1
 
+/* Cadastrar correntista*/
+
+create procedure pi_cadastroCliente
+@nome varchar(50),
+@cpf char(11),
+@rg char(9),
+@dataNascimento datetime,
+@telefone varchar(20),
+@celular char(11),
+@email varchar(50),
+@logradouro varchar(75),
+@numeroLogradouro varchar(5),
+@cep char(8),
+@cidade varchar(60),
+@estado char(2),
+@genero char(1),
+@renda numeric(10,2),
+@senhaLogin char(6)
+
+as
+insert into clientes
+values (@nome, @cpf, @rg, @dataNascimento, @telefone, @celular, @email, @logradouro, @numeroLogradouro, @cep, @cidade, @estado, @genero, @renda, @senhaLogin)
+
+exec pi_cadastroCliente 'Lucas Lima', '12345678900', null, '07/09/1990', null, '13991234567', null, 'Vila Belmiro', '10', '11000000', 'Santos', 'SP', 'M', '400000.00', '101010'
 

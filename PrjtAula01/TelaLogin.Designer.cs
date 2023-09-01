@@ -30,8 +30,7 @@
         {
             menu = new MenuStrip();
             loginToolStripMenuItem = new ToolStripMenuItem();
-            logarToolStripMenuItem = new ToolStripMenuItem();
-            cadastrarToolStripMenuItem = new ToolStripMenuItem();
+            cadastrarConta = new ToolStripMenuItem();
             extratoToolStripMenuItem = new ToolStripMenuItem();
             pagamentosToolStripMenuItem = new ToolStripMenuItem();
             operaçõesToolStripMenuItem = new ToolStripMenuItem();
@@ -48,34 +47,26 @@
             // menu
             // 
             menu.Dock = DockStyle.Left;
-            menu.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, extratoToolStripMenuItem, pagamentosToolStripMenuItem, operaçõesToolStripMenuItem, agendamentosToolStripMenuItem, configuraçõesToolStripMenuItem });
+            menu.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, cadastrarConta, extratoToolStripMenuItem, pagamentosToolStripMenuItem, operaçõesToolStripMenuItem, agendamentosToolStripMenuItem, configuraçõesToolStripMenuItem });
             menu.Location = new Point(0, 0);
             menu.Name = "menu";
-            menu.Size = new Size(56, 554);
+            menu.Size = new Size(126, 554);
             menu.TabIndex = 1;
             menu.Text = "menuStrip1";
             // 
             // loginToolStripMenuItem
             // 
-            loginToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { logarToolStripMenuItem, cadastrarToolStripMenuItem });
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             loginToolStripMenuItem.Size = new Size(113, 19);
-            loginToolStripMenuItem.Text = "Entrar";
+            loginToolStripMenuItem.Text = "Logar";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
-            // logarToolStripMenuItem
+            // cadastrarConta
             // 
-            logarToolStripMenuItem.Name = "logarToolStripMenuItem";
-            logarToolStripMenuItem.Size = new Size(180, 22);
-            logarToolStripMenuItem.Text = "Logar";
-            logarToolStripMenuItem.Click += logarToolStripMenuItem_Click;
-            // 
-            // cadastrarToolStripMenuItem
-            // 
-            cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
-            cadastrarToolStripMenuItem.Text = "Cadastrar";
-            cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
+            cadastrarConta.Name = "cadastrarConta";
+            cadastrarConta.Size = new Size(113, 19);
+            cadastrarConta.Text = "Cadastrar Conta";
+            cadastrarConta.Click += cadastrarContaToolStripMenuItem_Click;
             // 
             // extratoToolStripMenuItem
             // 
@@ -177,8 +168,7 @@
         private ToolStripMenuItem configuraçõesToolStripMenuItem;
         private ToolStripMenuItem alterarDadosToolStripMenuItem;
         private ToolStripMenuItem alterarSenhaToolStripMenuItem;
-        private ToolStripMenuItem logarToolStripMenuItem;
-        private ToolStripMenuItem cadastrarToolStripMenuItem;
         private ToolStripMenuItem extratoToolStripMenuItem;
+        private ToolStripMenuItem cadastrarConta;
     }
 }
