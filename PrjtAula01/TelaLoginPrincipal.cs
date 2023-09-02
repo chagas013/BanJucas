@@ -135,8 +135,7 @@ namespace PrjtAula01
                     menuPrincipal.Items[3].Visible = true;
                     menuPrincipal.Items[4].Visible = true;
                     menuPrincipal.Items[5].Visible = true;
-
-
+                    menuPrincipal.Items[6].Visible = true;
 
                     MessageBox.Show($"Olá,{UsuarioLogado.Nome}!\n" +
                         $"Você foi logado na conta {UsuarioLogado.Contas[0].IdCliente.ToString()}\n" +
@@ -144,10 +143,8 @@ namespace PrjtAula01
                     //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
                     //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
                     //    $"{CorrentistaLogado.Estado},{CorrentistaLogado.Cpf},{CorrentistaLogado.Senha},{CorrentistaLogado.Celular}");
+                    
                     this.Close();
-
-
-
 
 
                 }
@@ -160,7 +157,6 @@ namespace PrjtAula01
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
 
 

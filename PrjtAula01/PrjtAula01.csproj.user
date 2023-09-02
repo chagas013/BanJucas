@@ -4,6 +4,15 @@
     <Compile Update="Collection.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="TelaAlterarDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TelaAlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TelaCriarConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TelaLoginPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

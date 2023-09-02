@@ -71,7 +71,7 @@ namespace PrjtAula01
                     cmd.Parameters.AddWithValue("cep", txtCEP.Text);
                     cmd.Parameters.AddWithValue("cidade", txtCidade.Text);
                     cmd.Parameters.AddWithValue("estado", cbEstado.Text);
-                    cmd.Parameters.AddWithValue("genero", txtGeneroCad.Text);
+                    cmd.Parameters.AddWithValue("genero", cbGenero.Text);
                     cmd.Parameters.AddWithValue("renda", Convert.ToDecimal(txtRendaCad.Text));
                     cmd.Parameters.AddWithValue("senhaLogin", txtSenhaCad.Text);
 

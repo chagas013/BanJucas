@@ -129,14 +129,16 @@
             // alterarDadosToolStripMenuItem
             // 
             alterarDadosToolStripMenuItem.Name = "alterarDadosToolStripMenuItem";
-            alterarDadosToolStripMenuItem.Size = new Size(145, 22);
+            alterarDadosToolStripMenuItem.Size = new Size(180, 22);
             alterarDadosToolStripMenuItem.Text = "Alterar Dados";
+            alterarDadosToolStripMenuItem.Click += alterarDadosToolStripMenuItem_Click;
             // 
             // alterarSenhaToolStripMenuItem
             // 
             alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
-            alterarSenhaToolStripMenuItem.Size = new Size(145, 22);
+            alterarSenhaToolStripMenuItem.Size = new Size(180, 22);
             alterarSenhaToolStripMenuItem.Text = "Alterar Senha";
+            alterarSenhaToolStripMenuItem.Click += alterarSenhaToolStripMenuItem_Click;
             // 
             // TelaLogin
             // 

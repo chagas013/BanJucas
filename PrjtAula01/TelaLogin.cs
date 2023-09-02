@@ -101,5 +101,20 @@ namespace PrjtAula01
             cadastrarConta.MdiParent = this;
             cadastrarConta.Show();
         }
+
+        private void alterarDadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaAlterarDados telaAlterarDados = new TelaAlterarDados();
+            telaAlterarDados.MdiParent = this;
+            telaAlterarDados.Show();
+
+        }
+
+        private void alterarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaAlterarSenha telaAlterarSenha = new TelaAlterarSenha();
+            telaAlterarSenha.MdiParent = this;
+            telaAlterarSenha.Show();
+        }
     }
 }

@@ -129,3 +129,54 @@ values (@nome, @cpf, @rg, @dataNascimento, @telefone, @celular, @email, @logrado
 
 exec pi_cadastroCliente 'Lucas Lima', '12345678900', null, '07/09/1990', null, '13991234567', null, 'Vila Belmiro', '10', '11000000', 'Santos', 'SP', 'M', '400000.00', '101010'
 
+/*criar conta*/
+
+create procedure pi_conta
+@idCliente int,
+@statusConta varchar(50),
+@tipoConta varchar(10),
+@saldo numeric(10,2),
+@limite numeric(10,2),
+@dataAbertura datetime,
+@senhaConta char(6)
+as
+insert into conta (idCliente,statusConta,tipoConta,saldo, limite, dataAbertura, senhaConta)
+values (@idCliente, @statusConta, @tipoConta, @saldo, @limite, @dataAbertura, @senhaConta)
+select @@identity as 'ultimoID'
+
+create procedure pu_alterarDados
+@idCliente int,
+@nome varchar(50),
+@cpf char(11),
+@rg char(9),
+@dataNascimento datetime,
+@telefone varchar(20),
+@celular char(11),
+@email varchar(50),
+@logradouro varchar(75),
+@numeroLogradouro varchar(5),
+@cep char(8),
+@cidade varchar(60),
+@estado char(2),
+@genero char(1),
+@renda numeric(10,2),
+@senhaLogin char(6)
+as 
+update clientes
+set	nome = @nome,
+	cpf = @cpf,
+	rg = @rg,
+	dataNascimento = @dataNascimento,
+	telefone = @telefone,
+	celular = @celular,
+	email = @email,
+	logradouro = @logradouro,
+	numeroLogradouro = @numeroLogradouro,
+	cep = @cep,
+	cidade = @cidade,
+	estado = @estado,
+	genero = @genero,
+	renda = @renda
+
+where idCliente = @idCliente
+	
