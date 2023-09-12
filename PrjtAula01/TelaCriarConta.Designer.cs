@@ -111,6 +111,7 @@
             txtSenhaCriar.Size = new Size(300, 29);
             txtSenhaCriar.TabIndex = 1;
             txtSenhaCriar.TextAlign = HorizontalAlignment.Center;
+            txtSenhaCriar.TextChanged += txtSenhaCriar_TextChanged;
             // 
             // TelaCriarConta
             // 

@@ -144,6 +144,8 @@ insert into conta (idCliente,statusConta,tipoConta,saldo, limite, dataAbertura, 
 values (@idCliente, @statusConta, @tipoConta, @saldo, @limite, @dataAbertura, @senhaConta)
 select @@identity as 'ultimoID'
 
+/*Criando procedure para alterar dados cadastrais*/
+
 create procedure pu_alterarDados
 @idCliente int,
 @nome varchar(50),
@@ -179,4 +181,13 @@ set	nome = @nome,
 	renda = @renda
 
 where idCliente = @idCliente
-	
+
+/*Criando procedure para alterar senha*/
+
+create procedure pu_AlterarSenha
+@idCliente int,
+@senhaLogin char (6)
+as
+update clientes
+set senhaLogin = @senhaLogin
+where idCliente = @idCliente

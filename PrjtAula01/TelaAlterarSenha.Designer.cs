@@ -34,6 +34,7 @@
             txtConfAlterarSenha = new TextBox();
             txtAlterarSenha = new TextBox();
             lblAlterarSenha = new Label();
+            txtSenhaAtual = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -50,10 +51,10 @@
             // 
             btSalvarSenha.BackColor = Color.White;
             btSalvarSenha.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            btSalvarSenha.Location = new Point(474, 461);
+            btSalvarSenha.Location = new Point(474, 503);
             btSalvarSenha.Name = "btSalvarSenha";
             btSalvarSenha.Size = new Size(203, 54);
-            btSalvarSenha.TabIndex = 2;
+            btSalvarSenha.TabIndex = 3;
             btSalvarSenha.Text = "Salvar Senha";
             btSalvarSenha.UseVisualStyleBackColor = false;
             btSalvarSenha.Click += btSalvarSenha_Click;
@@ -89,12 +90,23 @@
             lblAlterarSenha.TabIndex = 62;
             lblAlterarSenha.Text = "Alterar Senha";
             // 
+            // txtSenhaAtual
+            // 
+            txtSenhaAtual.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSenhaAtual.Location = new Point(426, 445);
+            txtSenhaAtual.Name = "txtSenhaAtual";
+            txtSenhaAtual.PlaceholderText = "Digite Sua Senha Atual";
+            txtSenhaAtual.Size = new Size(300, 29);
+            txtSenhaAtual.TabIndex = 2;
+            txtSenhaAtual.TextAlign = HorizontalAlignment.Center;
+            // 
             // TelaAlterarSenha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(82, 143, 235);
             ClientSize = new Size(1149, 634);
+            Controls.Add(txtSenhaAtual);
             Controls.Add(lblAlterarSenha);
             Controls.Add(pictureBox1);
             Controls.Add(btSalvarSenha);
@@ -114,5 +126,6 @@
         private TextBox txtConfAlterarSenha;
         private TextBox txtAlterarSenha;
         private Label lblAlterarSenha;
+        private TextBox txtSenhaAtual;
     }
 }

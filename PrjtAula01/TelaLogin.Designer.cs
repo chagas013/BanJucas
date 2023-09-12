@@ -41,6 +41,9 @@
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             alterarDadosToolStripMenuItem = new ToolStripMenuItem();
             alterarSenhaToolStripMenuItem = new ToolStripMenuItem();
+            alterarContaToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            abrirContaToolStripMenuItem = new ToolStripMenuItem();
             menu.SuspendLayout();
             SuspendLayout();
             // 
@@ -120,7 +123,7 @@
             // 
             // configuraçõesToolStripMenuItem
             // 
-            configuraçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alterarDadosToolStripMenuItem, alterarSenhaToolStripMenuItem });
+            configuraçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alterarDadosToolStripMenuItem, alterarSenhaToolStripMenuItem, toolStripSeparator1, alterarContaToolStripMenuItem, abrirContaToolStripMenuItem });
             configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
             configuraçõesToolStripMenuItem.Size = new Size(113, 19);
             configuraçõesToolStripMenuItem.Text = "Configurações";
@@ -139,6 +142,23 @@
             alterarSenhaToolStripMenuItem.Size = new Size(180, 22);
             alterarSenhaToolStripMenuItem.Text = "Alterar Senha";
             alterarSenhaToolStripMenuItem.Click += alterarSenhaToolStripMenuItem_Click;
+            // 
+            // alterarContaToolStripMenuItem
+            // 
+            alterarContaToolStripMenuItem.Name = "alterarContaToolStripMenuItem";
+            alterarContaToolStripMenuItem.Size = new Size(180, 22);
+            alterarContaToolStripMenuItem.Text = "Alterar Conta";
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(177, 6);
+            // 
+            // abrirContaToolStripMenuItem
+            // 
+            abrirContaToolStripMenuItem.Name = "abrirContaToolStripMenuItem";
+            abrirContaToolStripMenuItem.Size = new Size(180, 22);
+            abrirContaToolStripMenuItem.Text = "Abrir Conta";
             // 
             // TelaLogin
             // 
@@ -172,5 +192,8 @@
         private ToolStripMenuItem alterarSenhaToolStripMenuItem;
         private ToolStripMenuItem extratoToolStripMenuItem;
         private ToolStripMenuItem cadastrarConta;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem alterarContaToolStripMenuItem;
+        private ToolStripMenuItem abrirContaToolStripMenuItem;
     }
 }

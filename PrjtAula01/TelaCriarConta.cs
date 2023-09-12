@@ -81,5 +81,10 @@ namespace PrjtAula01
                     "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtSenhaCriar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

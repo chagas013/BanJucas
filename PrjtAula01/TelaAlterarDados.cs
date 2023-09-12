@@ -55,8 +55,11 @@ namespace PrjtAula01
 
                 //abrir a conexão
                 conexao.Open();
+
                 cmd.ExecuteNonQuery(); //executa o comando no BD
+
                 conexao.Close();
+
                 MessageBox.Show("Cliente alterado com sucesso!!!", "Info",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -80,6 +83,13 @@ namespace PrjtAula01
             txtAlterarCel.Text = UsuarioLogado.Celular;
             txtAlterarEmail.Text = UsuarioLogado.Email;
             txtAlterarLogradouro.Text = UsuarioLogado.Logradouro;
+            txtAlterarNumeroLogradouro.Text = UsuarioLogado.NumeroLogradouro;
+            txtAlterarCep.Text = UsuarioLogado.Cep;
+            txtAlterarEmail.Text = UsuarioLogado.Email;
+            txtAlterarCidade.Text = UsuarioLogado.Cidade;
+            cbAlterarEstado.Text = UsuarioLogado.Estado;
+            cbAlterarGenero.Text = UsuarioLogado.Genero;
+            txtAlterarRenda.Text = Convert.ToString (UsuarioLogado.RendaMensal);
 
 
         }
