@@ -21,7 +21,7 @@ namespace PrjtAula01
 
             try
             {
-                //Criando uma conexão
+                //Criando uma conexão   
 
                 SqlConnection conexao =
                 new SqlConnection(ConfigurationManager.ConnectionStrings["PrjtAula01.Properties.Settings.strConexao"].ToString());

@@ -28,9 +28,11 @@ namespace PrjtAula01
                 {
                     Conta conta = new Conta();
                     conta.IdCliente = UsuarioLogado.IdCliente;
-                    conta.DataAbertura = DateTime.Now;
-                    conta.Saldo = Convert.ToDecimal(txtValDepConta.Text);
                     conta.StatusConta = "ATIVA";
+                    conta.TipoConta = "Corrente";
+                    conta.Saldo = Convert.ToDecimal(txtValDepConta.Text);
+                    conta.Saldo = UsuarioLogado.RendaMensal * 0.3m;
+                    conta.DataAbertura = DateTime.Now;                   
                     conta.SenhaConta = txtSenhaCriar.Text;
 
                     //Criando uma conexão
@@ -47,7 +49,7 @@ namespace PrjtAula01
 
                     //inserindo parâmetros à procedure
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("idCorrentista", conta.IdCliente);
+                    cmd.Parameters.AddWithValue("idCliente", conta.IdCliente);
                     cmd.Parameters.AddWithValue("dataAbertura", conta.DataAbertura);
                     cmd.Parameters.AddWithValue("saldo", conta.Saldo);
                     cmd.Parameters.AddWithValue("statusConta", conta.StatusConta);

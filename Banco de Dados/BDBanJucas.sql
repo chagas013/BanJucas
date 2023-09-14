@@ -191,3 +191,28 @@ as
 update clientes
 set senhaLogin = @senhaLogin
 where idCliente = @idCliente
+
+
+create procedure pu_conta
+@idConta int,
+@idCliente int,
+@statusConta varchar (50),
+@tipoConta varchar (50),
+@saldo numeric (10,2),
+@limite numeric (10,2),
+@dataEncerramento datetime,
+@senhaConta char (6)
+as
+update conta
+set statusConta = @statusConta,
+	tipoConta = @tipoConta,
+	saldo = @saldo,
+	limite = @limite,	
+	dataEncerramento = @dataEncerramento,
+	senhaConta = @senhaConta
+where idConta = @idConta
+
+drop procedure pu_conta
+
+select * from conta
+where idCliente = 1
