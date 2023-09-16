@@ -37,6 +37,7 @@ namespace PrjtAula01
 
                 //inserindo parâmetros à procedure
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("idCliente", UsuarioLogado.IdCliente);
                 cmd.Parameters.AddWithValue("nome", txtAlterarNome.Text);
                 cmd.Parameters.AddWithValue("cpf", txtAlterarCpf.Text);
                 cmd.Parameters.AddWithValue("rg", txtAlterarRg.Text);
@@ -51,6 +52,7 @@ namespace PrjtAula01
                 cmd.Parameters.AddWithValue("estado", cbAlterarEstado.Text);
                 cmd.Parameters.AddWithValue("genero", cbAlterarGenero.Text);
                 cmd.Parameters.AddWithValue("renda", Convert.ToDecimal(txtAlterarRenda.Text));
+                cmd.Parameters.AddWithValue("senhaLogin", UsuarioLogado.Senha);
 
 
                 //abrir a conexão
@@ -63,7 +65,7 @@ namespace PrjtAula01
                 MessageBox.Show("Cliente alterado com sucesso!!!", "Info",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                UIclear.limparTelas(this);
+                
             }
 
             catch (Exception ex)

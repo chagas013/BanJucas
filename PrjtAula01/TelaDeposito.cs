@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,6 +39,8 @@ namespace PrjtAula01
             try
             {
 
+                Conta conta = new Conta();
+
                 if (Convert.ToInt32(txtValorDeposito.Text) <= 0 || decimal.TryParse(txtValorDeposito.Text, out decimal result) == false)
                 {
                     throw new Exception("Insira um valor acima de R$ 0,00");
@@ -50,13 +53,20 @@ namespace PrjtAula01
 
                 else
                 {
-
-                    Conta conta = new Conta();
-                    conta.IdConta
+                    foreach (var item in UsuarioLogado.Contas)
+                    {
+                        if (item.IdConta == UsuarioLogado.contaLogada)
+                        {
+                            conta = item;
+                        }
+                    }
+                                        
+                    conta.IdConta = UsuarioLogado.contaLogada;
                     conta.StatusConta = "ATIVA";
                     conta.TipoConta = "Corrente";
                     conta.Limite = UsuarioLogado.RendaMensal * 0.3m;
                     conta.Saldo = conta.Saldo + Convert.ToDecimal(txtValorDeposito.Text);
+                    conta.DataEncerramento = null;
 
                     SqlConnection conexao =
                     new SqlConnection(ConfigurationManager.ConnectionStrings["PrjtAula01.Properties.Settings.strConexao"].ToString());
@@ -69,18 +79,26 @@ namespace PrjtAula01
                     cmd.Connection = conexao;
 
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("IdConta", UsuarioLogado.IdConta);
+                    cmd.Parameters.AddWithValue("IdConta", UsuarioLogado.contaLogada);
                     cmd.Parameters.AddWithValue("statusConta", conta.StatusConta);
                     cmd.Parameters.AddWithValue("tipoConta", conta.TipoConta);
-                    cmd.Parameters.AddWithValue("saldo", Convert.ToDecimal(txtValorDeposito.Text));
+                    cmd.Parameters.AddWithValue("saldo", conta.Saldo);
                     cmd.Parameters.AddWithValue("limite", conta.Limite);
                     cmd.Parameters.AddWithValue("senhaConta", UsuarioLogado.Senha);
+
+                    if (conta.DataEncerramento == null)
+                    {
+                        cmd.Parameters.AddWithValue("dataEncerramento", DBNull.Value);
+
+                    }
+                    
 
                     conexao.Open();
 
                     cmd.ExecuteNonQuery();
 
                     conexao.Close();
+
 
                     UIclear.limparTelas(this);
 

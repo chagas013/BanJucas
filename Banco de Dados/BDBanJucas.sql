@@ -182,6 +182,7 @@ set	nome = @nome,
 
 where idCliente = @idCliente
 
+
 /*Criando procedure para alterar senha*/
 
 create procedure pu_AlterarSenha
@@ -195,7 +196,6 @@ where idCliente = @idCliente
 
 create procedure pu_conta
 @idConta int,
-@idCliente int,
 @statusConta varchar (50),
 @tipoConta varchar (50),
 @saldo numeric (10,2),
@@ -215,4 +215,5 @@ where idConta = @idConta
 drop procedure pu_conta
 
 select * from conta
-where idCliente = 1
+select * from clientes
+where idCliente = 2

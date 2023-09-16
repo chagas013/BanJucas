@@ -31,7 +31,7 @@ namespace PrjtAula01
                     conta.StatusConta = "ATIVA";
                     conta.TipoConta = "Corrente";
                     conta.Saldo = Convert.ToDecimal(txtValDepConta.Text);
-                    conta.Saldo = UsuarioLogado.RendaMensal * 0.3m;
+                    conta.Limite = UsuarioLogado.RendaMensal * 0.3m;
                     conta.DataAbertura = DateTime.Now;                   
                     conta.SenhaConta = txtSenhaCriar.Text;
 
@@ -50,10 +50,12 @@ namespace PrjtAula01
                     //inserindo parâmetros à procedure
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("idCliente", conta.IdCliente);
-                    cmd.Parameters.AddWithValue("dataAbertura", conta.DataAbertura);
-                    cmd.Parameters.AddWithValue("saldo", conta.Saldo);
                     cmd.Parameters.AddWithValue("statusConta", conta.StatusConta);
-                    cmd.Parameters.AddWithValue("senha", conta.SenhaConta);
+                    cmd.Parameters.AddWithValue("tipoConta", conta.TipoConta);
+                    cmd.Parameters.AddWithValue("saldo", conta.Saldo);
+                    cmd.Parameters.AddWithValue("limite", conta.Limite);                    
+                    cmd.Parameters.AddWithValue("dataAbertura", conta.DataAbertura);                  
+                    cmd.Parameters.AddWithValue("senhaConta", conta.SenhaConta);
 
                     //abrir a conexão
                     conexao.Open();
@@ -61,10 +63,10 @@ namespace PrjtAula01
                     //executa o comando no BD e captura o retorno devolvido pelo procedimento
                     conta.IdCliente = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    MessageBox.Show(conta.IdCliente.ToString());
+                    /*MessageBox.Show(conta.IdCliente.ToString());*/
 
                     conexao.Close();
-                    MessageBox.Show("Conta criada com sucesso!!!", "Info",
+                    MessageBox.Show($"Conta criada com sucesso!!!", "Info",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     UsuarioLogado.Contas.Add(conta);

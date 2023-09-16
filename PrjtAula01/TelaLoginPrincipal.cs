@@ -136,15 +136,34 @@ namespace PrjtAula01
                     menuPrincipal.Items[4].Visible = true;
                     menuPrincipal.Items[5].Visible = true;
                     menuPrincipal.Items[6].Visible = true;
+                    
 
-                    MessageBox.Show($"Olá,{UsuarioLogado.Nome}!\n" +
+                    MenuStrip menuSegundo = (MenuStrip)telaPrincipal.Controls[1];
+                    menuSegundo.Items[0].Visible = true;
+
+                    if (UsuarioLogado.Contas.Count == 0)
+                    {
+                        
+                        menuSegundo.Items[0].Text = "Não há contas!";
+                        menuPrincipal.Items[1].Text = "Criar Conta";
+                        MessageBox.Show($"Olá, {UsuarioLogado.Nome}!");
+                        
+
+                    }
+
+                    else
+                    {
+
+                        MessageBox.Show($"Olá,{UsuarioLogado.Nome}!\n" +
                         $"Você foi logado na conta {UsuarioLogado.Contas[0].IdCliente.ToString()}\n" +
                         $"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
-                    //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
-                    //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
-                    //    $"{CorrentistaLogado.Estado},{CorrentistaLogado.Cpf},{CorrentistaLogado.Senha},{CorrentistaLogado.Celular}");
+                        //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
+                        //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
+                        //    $"{CorrentistaLogado.Estado},{CorrentistaLogado.Cpf},{CorrentistaLogado.Senha},{CorrentistaLogado.Celular}");
+
+                    }
                     
-                    this.Close();
+                        this.Close();
 
 
                 }

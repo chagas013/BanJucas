@@ -27,6 +27,7 @@ namespace PrjtAula01
         public static string? Genero { get; set; }
         public static decimal RendaMensal { get; set; }        
         public static string? Senha { get; set; }
+        public static int contaLogada { get; set; }
 
 
         public static List<Conta> Contas = new List<Conta>();
@@ -50,7 +51,8 @@ namespace PrjtAula01
             UsuarioLogado.Genero = String.Empty;
             UsuarioLogado.RendaMensal = 0;           
             UsuarioLogado.Senha = String.Empty;
-            
+            UsuarioLogado.contaLogada = 0;
+
             UsuarioLogado.Contas.Clear();
         }
     }

@@ -97,9 +97,20 @@ namespace PrjtAula01
 
         private void cadastrarContaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TelaCadastro cadastrarConta = new TelaCadastro();
-            cadastrarConta.MdiParent = this;
-            cadastrarConta.Show();
+            if (menu.Items[1].Text == "Criar Conta")
+            {
+                TelaCriarConta criarConta = new TelaCriarConta();
+                criarConta.MdiParent = this;
+                criarConta.Show();
+            }
+
+            else
+            {
+                TelaCadastro cadastrarConta = new TelaCadastro();
+                cadastrarConta.MdiParent = this;
+                cadastrarConta.Show();
+            }
+
         }
 
         private void alterarDadosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,6 +126,11 @@ namespace PrjtAula01
             TelaAlterarSenha telaAlterarSenha = new TelaAlterarSenha();
             telaAlterarSenha.MdiParent = this;
             telaAlterarSenha.Show();
+        }
+
+        private void contasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
