@@ -132,5 +132,19 @@ namespace PrjtAula01
         {
 
         }
+
+        private void abrirContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaCriarConta criarConta = new TelaCriarConta();
+            criarConta.MdiParent = this;
+            criarConta.Show();
+        }
+
+        private void alterarContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaAlterarConta alterarConta = new TelaAlterarConta();
+            alterarConta.MdiParent = this;
+            alterarConta.Show();
+        }
     }
 }

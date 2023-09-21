@@ -57,35 +57,35 @@
             menu.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, cadastrarConta, extratoToolStripMenuItem, pagamentosToolStripMenuItem, operaçõesToolStripMenuItem, agendamentosToolStripMenuItem, configuraçõesToolStripMenuItem });
             menu.Location = new Point(0, 0);
             menu.Name = "menu";
-            menu.Size = new Size(110, 527);
+            menu.Size = new Size(126, 527);
             menu.TabIndex = 1;
             menu.Text = "menuStrip1";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(97, 19);
+            loginToolStripMenuItem.Size = new Size(113, 19);
             loginToolStripMenuItem.Text = "Logar";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // cadastrarConta
             // 
             cadastrarConta.Name = "cadastrarConta";
-            cadastrarConta.Size = new Size(97, 19);
+            cadastrarConta.Size = new Size(113, 19);
             cadastrarConta.Text = "Cadastrar Conta";
             cadastrarConta.Click += cadastrarContaToolStripMenuItem_Click;
             // 
             // extratoToolStripMenuItem
             // 
             extratoToolStripMenuItem.Name = "extratoToolStripMenuItem";
-            extratoToolStripMenuItem.Size = new Size(97, 19);
+            extratoToolStripMenuItem.Size = new Size(113, 19);
             extratoToolStripMenuItem.Text = "Extrato";
             extratoToolStripMenuItem.Visible = false;
             // 
             // pagamentosToolStripMenuItem
             // 
             pagamentosToolStripMenuItem.Name = "pagamentosToolStripMenuItem";
-            pagamentosToolStripMenuItem.Size = new Size(97, 19);
+            pagamentosToolStripMenuItem.Size = new Size(113, 19);
             pagamentosToolStripMenuItem.Text = "Pagamentos";
             pagamentosToolStripMenuItem.Visible = false;
             // 
@@ -93,35 +93,35 @@
             // 
             operaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { depósitoToolStripMenuItem, saqueToolStripMenuItem, transferênciaToolStripMenuItem });
             operaçõesToolStripMenuItem.Name = "operaçõesToolStripMenuItem";
-            operaçõesToolStripMenuItem.Size = new Size(97, 19);
+            operaçõesToolStripMenuItem.Size = new Size(113, 19);
             operaçõesToolStripMenuItem.Text = "Operações";
             operaçõesToolStripMenuItem.Visible = false;
             // 
             // depósitoToolStripMenuItem
             // 
             depósitoToolStripMenuItem.Name = "depósitoToolStripMenuItem";
-            depósitoToolStripMenuItem.Size = new Size(180, 22);
+            depósitoToolStripMenuItem.Size = new Size(143, 22);
             depósitoToolStripMenuItem.Text = "Depósito";
             depósitoToolStripMenuItem.Click += depósitoToolStripMenuItem_Click;
             // 
             // saqueToolStripMenuItem
             // 
             saqueToolStripMenuItem.Name = "saqueToolStripMenuItem";
-            saqueToolStripMenuItem.Size = new Size(180, 22);
+            saqueToolStripMenuItem.Size = new Size(143, 22);
             saqueToolStripMenuItem.Text = "Saque";
             saqueToolStripMenuItem.Click += saqueToolStripMenuItem_Click;
             // 
             // transferênciaToolStripMenuItem
             // 
             transferênciaToolStripMenuItem.Name = "transferênciaToolStripMenuItem";
-            transferênciaToolStripMenuItem.Size = new Size(180, 22);
+            transferênciaToolStripMenuItem.Size = new Size(143, 22);
             transferênciaToolStripMenuItem.Text = "Transferência";
             transferênciaToolStripMenuItem.Click += transferênciaToolStripMenuItem_Click;
             // 
             // agendamentosToolStripMenuItem
             // 
             agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
-            agendamentosToolStripMenuItem.Size = new Size(97, 19);
+            agendamentosToolStripMenuItem.Size = new Size(113, 19);
             agendamentosToolStripMenuItem.Text = "Agendamentos";
             agendamentosToolStripMenuItem.Visible = false;
             // 
@@ -129,40 +129,42 @@
             // 
             configuraçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alterarDadosToolStripMenuItem, alterarSenhaToolStripMenuItem, toolStripSeparator1, alterarContaToolStripMenuItem, abrirContaToolStripMenuItem });
             configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            configuraçõesToolStripMenuItem.Size = new Size(97, 19);
+            configuraçõesToolStripMenuItem.Size = new Size(113, 19);
             configuraçõesToolStripMenuItem.Text = "Configurações";
             configuraçõesToolStripMenuItem.Visible = false;
             // 
             // alterarDadosToolStripMenuItem
             // 
             alterarDadosToolStripMenuItem.Name = "alterarDadosToolStripMenuItem";
-            alterarDadosToolStripMenuItem.Size = new Size(145, 22);
+            alterarDadosToolStripMenuItem.Size = new Size(180, 22);
             alterarDadosToolStripMenuItem.Text = "Alterar Dados";
             alterarDadosToolStripMenuItem.Click += alterarDadosToolStripMenuItem_Click;
             // 
             // alterarSenhaToolStripMenuItem
             // 
             alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
-            alterarSenhaToolStripMenuItem.Size = new Size(145, 22);
+            alterarSenhaToolStripMenuItem.Size = new Size(180, 22);
             alterarSenhaToolStripMenuItem.Text = "Alterar Senha";
             alterarSenhaToolStripMenuItem.Click += alterarSenhaToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(142, 6);
+            toolStripSeparator1.Size = new Size(177, 6);
             // 
             // alterarContaToolStripMenuItem
             // 
             alterarContaToolStripMenuItem.Name = "alterarContaToolStripMenuItem";
-            alterarContaToolStripMenuItem.Size = new Size(145, 22);
+            alterarContaToolStripMenuItem.Size = new Size(180, 22);
             alterarContaToolStripMenuItem.Text = "Alterar Conta";
+            alterarContaToolStripMenuItem.Click += alterarContaToolStripMenuItem_Click;
             // 
             // abrirContaToolStripMenuItem
             // 
             abrirContaToolStripMenuItem.Name = "abrirContaToolStripMenuItem";
-            abrirContaToolStripMenuItem.Size = new Size(145, 22);
+            abrirContaToolStripMenuItem.Size = new Size(180, 22);
             abrirContaToolStripMenuItem.Text = "Abrir Conta";
+            abrirContaToolStripMenuItem.Click += abrirContaToolStripMenuItem_Click;
             // 
             // menuStrip1
             // 

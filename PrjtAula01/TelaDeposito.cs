@@ -35,7 +35,7 @@ namespace PrjtAula01
         private void btConfirmarDeposito_Click(object sender, EventArgs e)
         {
 
-                        
+
             try
             {
 
@@ -60,7 +60,7 @@ namespace PrjtAula01
                             conta = item;
                         }
                     }
-                                        
+
                     conta.IdConta = UsuarioLogado.contaLogada;
                     conta.StatusConta = "ATIVA";
                     conta.TipoConta = "Corrente";
@@ -71,7 +71,7 @@ namespace PrjtAula01
                     SqlConnection conexao =
                     new SqlConnection(ConfigurationManager.ConnectionStrings["PrjtAula01.Properties.Settings.strConexao"].ToString());
 
-                    
+
                     SqlCommand cmd = new SqlCommand();
 
                     cmd.CommandText = "pu_conta";
@@ -91,7 +91,9 @@ namespace PrjtAula01
                         cmd.Parameters.AddWithValue("dataEncerramento", DBNull.Value);
 
                     }
-                    
+
+                    throw new Exception("Depósito realizado com sucesso");
+
 
                     conexao.Open();
 
@@ -110,6 +112,11 @@ namespace PrjtAula01
 
                 MessageBox.Show(ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void txtValorDeposito_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

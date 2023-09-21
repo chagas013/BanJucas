@@ -217,3 +217,10 @@ drop procedure pu_conta
 select * from conta
 select * from clientes
 where idCliente = 2
+
+create procedure ps_ValidarSenhaConta
+@idConta int,
+@senhaConta char (6)
+as
+select * from Conta
+where idConta = @idConta and senhaConta = @senhaConta

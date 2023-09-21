@@ -79,6 +79,7 @@
             btConfirmarSaque.TabIndex = 5;
             btConfirmarSaque.Text = "Confirmar saque";
             btConfirmarSaque.UseVisualStyleBackColor = false;
+            btConfirmarSaque.Click += btConfirmarSaque_Click;
             // 
             // lblValorSaque
             // 

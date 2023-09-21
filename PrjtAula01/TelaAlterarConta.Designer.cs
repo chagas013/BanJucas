@@ -58,6 +58,7 @@
             cbAlterarConta.Name = "cbAlterarConta";
             cbAlterarConta.Size = new Size(97, 29);
             cbAlterarConta.TabIndex = 0;
+            cbAlterarConta.SelectedIndexChanged += cbAlterarConta_SelectedIndexChanged;
             // 
             // lblContas
             // 
@@ -122,6 +123,7 @@
             Controls.Add(lblAlterarConta);
             Name = "TelaAlterarConta";
             Text = "TelaAlterarConta";
+            Load += TelaAlterarConta_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

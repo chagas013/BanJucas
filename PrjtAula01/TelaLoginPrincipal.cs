@@ -123,6 +123,9 @@ namespace PrjtAula01
                             UsuarioLogado.Contas.Add(conta);
                         }
                     }
+
+                    UsuarioLogado.contaLogada = UsuarioLogado.Contas[0].IdConta;
+
                     leitor.Close(); //fecha leitor
                     conexao.Close(); //fecha conexao com BD
 

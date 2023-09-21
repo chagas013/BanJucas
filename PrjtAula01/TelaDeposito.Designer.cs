@@ -141,6 +141,7 @@
             txtValorDeposito.Size = new Size(300, 43);
             txtValorDeposito.TabIndex = 4;
             txtValorDeposito.TextAlign = HorizontalAlignment.Center;
+            txtValorDeposito.TextChanged += txtValorDeposito_TextChanged;
             // 
             // lblValorDeposito
             // 

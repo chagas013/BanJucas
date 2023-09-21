@@ -61,7 +61,7 @@ namespace PrjtAula01
                     conexao.Open();
 
                     //executa o comando no BD e captura o retorno devolvido pelo procedimento
-                    conta.IdCliente = Convert.ToInt32(cmd.ExecuteScalar());
+                    conta.IdConta = Convert.ToInt32(cmd.ExecuteScalar());
 
                     /*MessageBox.Show(conta.IdCliente.ToString());*/
 
